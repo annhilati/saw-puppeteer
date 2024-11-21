@@ -1,5 +1,5 @@
 // Liste der Kurs-IDs
-const kursIDs = [8650, 8651, 8652, 8653]; // Füge hier deine IDs hinzu
+const kursIDs = [8537, 8651, 8652, 8653]; // Füge hier deine IDs hinzu
 
 // Schleife, um die Kurse automatisch zu wählen
 kursIDs.forEach(kursID => {
