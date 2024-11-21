@@ -20,7 +20,8 @@
     ```
 
 <details>
-  <summary><h2>Click me</h2></summary>
+  <summary>Click me</summary>
+  ---------
   
   ### Heading
   1. Foo
