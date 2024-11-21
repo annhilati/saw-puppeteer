@@ -1,0 +1,3621 @@
+
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="Jy2tQ0b8jCUJ13W7CU6HrtGtnlKL3u55oaYjbbKg">
+
+        <title>SAWware</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <link rel="preload" as="style" href="https://sawware.benno.webstitut.de/build/assets/app-b2f3d92f.css" /><link rel="preload" as="style" href="https://sawware.benno.webstitut.de/build/assets/app-b2b172a9.css" /><link rel="modulepreload" href="https://sawware.benno.webstitut.de/build/assets/app-d4f46087.js" /><link rel="stylesheet" href="https://sawware.benno.webstitut.de/build/assets/app-b2f3d92f.css" data-navigate-track="reload" /><link rel="stylesheet" href="https://sawware.benno.webstitut.de/build/assets/app-b2b172a9.css" data-navigate-track="reload" /><script type="module" src="https://sawware.benno.webstitut.de/build/assets/app-d4f46087.js" data-navigate-track="reload"></script>
+        <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="https://matomo.webstitut.de/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '8']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <!-- End Matomo Code -->
+    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+</head>
+    <body class="font-sans antialiased bg-gray-100">
+        <div class="min-h-screen">
+            <nav wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;0v1aVEOWdWmpDM1rzM6s&quot;,&quot;name&quot;:&quot;layout.navigation&quot;,&quot;path&quot;:&quot;courseinformations&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;de&quot;},&quot;checksum&quot;:&quot;ed85a6c968771d6a909abfa9bdd2315d29c6025e573e24dfed669ca53f1526ce&quot;}" wire:effects="[]" wire:id="0v1aVEOWdWmpDM1rzM6s" x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="https://sawware.benno.webstitut.de/dashboard" wire:navigate>
+                        <img src="https://sawware.benno.webstitut.de/assets/img/Logo_SAWware_schmal.png" alt="SAWware" title="SAWware" class="max-h-14" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="https://sawware.benno.webstitut.de/dashboard" wire:navigate="wire:navigate">
+    Dashboard
+</a>
+                                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out" href="https://sawware.benno.webstitut.de/courseinformations" wire:navigate="wire:navigate">
+    Kursinformationen
+</a>
+                                    </div>
+            </div>
+
+            <!-- Settings Dropdown -->
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+    <div @click="open = ! open">
+        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                            <div x-data="{ name: 'Anton Berndt' }" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
+
+                            <div class="ms-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+    </div>
+
+    <div x-show="open"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg ltr:origin-top-right rtl:origin-top-left end-0"
+            style="display: none;"
+            @click="open = false">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
+            <!-- Authentication -->
+                        <button wire:click="logout" class="w-full text-start">
+                            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Logout</a>
+                        </button>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="-me-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="https://sawware.benno.webstitut.de/dashboard" wire:navigate="wire:navigate">
+    Dashboard
+</a>
+                            <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-indigo-400 text-start text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out" href="https://sawware.benno.webstitut.de/courseinformations" wire:navigate="wire:navigate">
+    Kursinformationen
+</a>
+                    </div>
+
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-gray-200">
+            <div class="px-4">
+                <div class="font-medium text-base text-gray-800" x-data="{ name: 'Anton Berndt' }" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
+            </div>
+
+            <div class="mt-3 space-y-1">
+
+                <!-- Authentication -->
+                <button wire:click="logout" class="w-full text-start">
+                    <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">
+    Logout
+</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+            <!-- Page Content -->
+            <main>
+                <div class="sm:px-0 lg:px-4 xl:px-8 sm:py-1 lg:py-4 xl:py-8">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg shadow-md">
+            <div class="sm:p-2 lg:p-4 xl:p-6 sm:py-1 lg:py-2 xl:py-4 border-b border-gray-200 font-bold uppercase bg-blue-100">
+                Stundenplan
+            </div>
+            <div class="sm:p-2 lg:p-4 xl:p-6 bg-white border-b border-gray-200">
+                <div wire:snapshot="{&quot;data&quot;:{&quot;input&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;0SCEfVR5HI3gZrTes4tU&quot;,&quot;name&quot;:&quot;stundenplan&quot;,&quot;path&quot;:&quot;courseinformations&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;de&quot;},&quot;checksum&quot;:&quot;8abf50cbcd9ddd116bd128352e3ff95ac04be7bf8eec9f5faa812121b3234d68&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;kurs-selected&quot;]}" wire:id="0SCEfVR5HI3gZrTes4tU" class="flex flex-col ">
+    <p>Du hast noch keine Kurse gewählt.</p>
+    <p>Hinweis: Bei der eigentlichen Kurswahl musst Du mindestens 22 Stunden wählen und es darf kein freier Tag im Stundenplan sein.</p>
+</div>            </div>
+        </div>
+    </div>
+    <div class="sm:px-0 lg:px-4 xl:px-8">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg shadow-md ">
+            <div class="sm:p-2 lg:p-4 xl:p-6 sm:py-1 lg:py-2 xl:py-4 border-b border-gray-200 font-bold uppercase bg-blue-100">
+                Kurse
+            </div>
+            <div class="sm:p-2 lg:p-4 xl:p-6 bg-white border-b border-gray-200">
+                <div wire:snapshot="{&quot;data&quot;:{&quot;primaryKey&quot;:&quot;id&quot;,&quot;sortField&quot;:&quot;Kurstitel&quot;,&quot;headers&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;search&quot;:&quot;&quot;,&quot;columns&quot;:[[[{&quot;title&quot;:&quot;Nr.&quot;,&quot;field&quot;:&quot;id&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;id&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:true,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterInputText&quot;,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;id&quot;,&quot;field&quot;:&quot;id&quot;,&quot;operators&quot;:[[&quot;contains&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;placeholder&quot;:&quot;&quot;,&quot;title&quot;:&quot;Nr.&quot;},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Kurstitel&quot;,&quot;field&quot;:&quot;Kurstitel&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Kurstitel&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:true,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;1&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterInputText&quot;,&quot;builder&quot;:null,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;Kurstitel&quot;,&quot;field&quot;:&quot;Kurstitel&quot;,&quot;operators&quot;:[[&quot;contains&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;placeholder&quot;:&quot;&quot;,&quot;title&quot;:&quot;Kurstitel&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Dozent&quot;,&quot;field&quot;:&quot;Dozent_Name&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Dozent_Name&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;CONCAT(dozenten.Nachname, \&quot;, \&quot;, dozenten.Vorname)&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;2&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterInputText&quot;,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;Dozent_Name&quot;,&quot;field&quot;:&quot;Dozent_Name&quot;,&quot;operators&quot;:[[&quot;contains&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;placeholder&quot;:&quot;&quot;,&quot;title&quot;:&quot;Dozent&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Kategorie&quot;,&quot;field&quot;:&quot;Kurskategorie_Bezeichnung&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Kurskategorie_Bezeichnung&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:true,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;3&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterInputText&quot;,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;Kurskategorie_Bezeichnung&quot;,&quot;field&quot;:&quot;Kurskategorie_Bezeichnung&quot;,&quot;operators&quot;:[[&quot;contains&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;placeholder&quot;:&quot;&quot;,&quot;title&quot;:&quot;Kategorie&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Kursart&quot;,&quot;field&quot;:&quot;Kursart&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Kursart&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:true,&quot;forceHidden&quot;:true,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:true,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;4&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterSelect&quot;,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;Kursart&quot;,&quot;field&quot;:&quot;Kursart&quot;,&quot;dataSource&quot;:[[[{&quot;Kursart&quot;:&quot;Exkursion&quot;,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;Kursart&quot;:&quot;wiederholter Kurs&quot;,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;optionValue&quot;:&quot;Kursart&quot;,&quot;optionLabel&quot;:&quot;Kursart&quot;,&quot;depends&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;title&quot;:&quot;Kursart&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;a. Zeit&quot;,&quot;field&quot;:&quot;KursAnrechenbareZeit&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;KursAnrechenbareZeit&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;5&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterSelect&quot;,&quot;builder&quot;:null,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;KursAnrechenbareZeit&quot;,&quot;field&quot;:&quot;KursAnrechenbareZeit&quot;,&quot;dataSource&quot;:[[[{&quot;KursAnrechenbareZeit&quot;:1,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;KursAnrechenbareZeit&quot;:2,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;KursAnrechenbareZeit&quot;:3,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;KursAnrechenbareZeit&quot;:4,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;KursAnrechenbareZeit&quot;:5,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;KursAnrechenbareZeit&quot;:7,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;KursAnrechenbareZeit&quot;:15,&quot;kurstitel_with_dozent&quot;:null,&quot;dozent__dozenten&quot;:null},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;optionValue&quot;:&quot;KursAnrechenbareZeit&quot;,&quot;optionLabel&quot;:&quot;KursAnrechenbareZeit&quot;,&quot;depends&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;title&quot;:&quot;a. Zeit&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;m. Tn.&quot;,&quot;field&quot;:&quot;MaxTeilnehmeranzahl&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;MaxTeilnehmeranzahl&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Buch.&quot;,&quot;field&quot;:&quot;AnzahlBuchungen&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;AnzahlBuchungen&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Res.&quot;,&quot;field&quot;:&quot;AnzahlReservierung&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;AnzahlReservierung&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:true,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Kurszeiten&quot;,&quot;field&quot;:&quot;Kurszeiten&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Kurszeiten&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:false,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Beschreibung&quot;,&quot;field&quot;:&quot;Beschreibung&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Beschreibung&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:true,&quot;forceHidden&quot;:true,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:true,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:false,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Wochentage&quot;,&quot;field&quot;:&quot;Wochentage&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Wochentage&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:true,&quot;forceHidden&quot;:true,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:false,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;6&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterSelect&quot;,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;Wochentage&quot;,&quot;field&quot;:&quot;Wochentage&quot;,&quot;dataSource&quot;:[[[{&quot;id&quot;:&quot;Day1&quot;,&quot;label&quot;:&quot;Freitag(1)&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:&quot;Day2&quot;,&quot;label&quot;:&quot;Montag(2)&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:&quot;Day3&quot;,&quot;label&quot;:&quot;Dienstag(3)&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:&quot;Day4&quot;,&quot;label&quot;:&quot;Mittwoch(4)&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:&quot;Day5&quot;,&quot;label&quot;:&quot;Donnerstag(5)&quot;},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;optionValue&quot;:&quot;id&quot;,&quot;optionLabel&quot;:&quot;label&quot;,&quot;depends&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;title&quot;:&quot;Wochentage&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Stunden&quot;,&quot;field&quot;:&quot;Stunden&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;Stunden&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:true,&quot;forceHidden&quot;:true,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:false,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[{&quot;7&quot;:[{&quot;className&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Components\\Filters\\FilterSelect&quot;,&quot;collection&quot;:null,&quot;component&quot;:&quot;&quot;,&quot;attributes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;baseClass&quot;:&quot;&quot;,&quot;filterRelation&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;column&quot;:&quot;Stunden&quot;,&quot;field&quot;:&quot;Stunden&quot;,&quot;dataSource&quot;:[[[{&quot;id&quot;:1,&quot;db_value&quot;:&quot;Stunde1&quot;,&quot;label&quot;:&quot;08:00-09:00&quot;,&quot;label2&quot;:&quot;1. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:2,&quot;db_value&quot;:&quot;Stunde2&quot;,&quot;label&quot;:&quot;09:00-10:00&quot;,&quot;label2&quot;:&quot;2. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:3,&quot;db_value&quot;:&quot;Stunde3&quot;,&quot;label&quot;:&quot;10:00-11:00&quot;,&quot;label2&quot;:&quot;3. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:4,&quot;db_value&quot;:&quot;Stunde4&quot;,&quot;label&quot;:&quot;11:00-12:00&quot;,&quot;label2&quot;:&quot;4. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:5,&quot;db_value&quot;:&quot;Stunde5&quot;,&quot;label&quot;:&quot;12:00-13:00&quot;,&quot;label2&quot;:&quot;5. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:6,&quot;db_value&quot;:&quot;Stunde6&quot;,&quot;label&quot;:&quot;13:00-14:00&quot;,&quot;label2&quot;:&quot;6. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:7,&quot;db_value&quot;:&quot;Stunde7&quot;,&quot;label&quot;:&quot;14:00-15:00&quot;,&quot;label2&quot;:&quot;7. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:8,&quot;db_value&quot;:&quot;Stunde8&quot;,&quot;label&quot;:&quot;15:00-16:00&quot;,&quot;label2&quot;:&quot;8. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:9,&quot;db_value&quot;:&quot;Stunde9&quot;,&quot;label&quot;:&quot;ab 16:00&quot;,&quot;label2&quot;:&quot;9. Stunde&quot;},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;optionValue&quot;:&quot;label2&quot;,&quot;optionLabel&quot;:&quot;label2&quot;,&quot;depends&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;title&quot;:&quot;Stunden&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:false,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}],[{&quot;title&quot;:&quot;Funktion&quot;,&quot;field&quot;:&quot;&quot;,&quot;headerClass&quot;:&quot;&quot;,&quot;headerStyle&quot;:&quot;&quot;,&quot;bodyClass&quot;:&quot;&quot;,&quot;contentClassField&quot;:&quot;&quot;,&quot;contentClasses&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bodyStyle&quot;:&quot;&quot;,&quot;dataField&quot;:&quot;&quot;,&quot;placeholder&quot;:&quot;&quot;,&quot;hidden&quot;:false,&quot;forceHidden&quot;:false,&quot;visibleInExport&quot;:null,&quot;editable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;searchable&quot;:false,&quot;searchableRaw&quot;:&quot;&quot;,&quot;sortable&quot;:false,&quot;summarize&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;sum&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;count&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;avg&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;min&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;max&quot;:[{&quot;header&quot;:false,&quot;footer&quot;:false,&quot;label&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;filters&quot;:[[],{&quot;class&quot;:&quot;Illuminate\\Support\\Collection&quot;,&quot;s&quot;:&quot;clctn&quot;}],&quot;isAction&quot;:true,&quot;toggleable&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;index&quot;:false,&quot;fixedOnResponsive&quot;:false},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Column&quot;,&quot;s&quot;:&quot;wrbl&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;filtered&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;currentTable&quot;:&quot;kurse&quot;,&quot;datasource&quot;:null,&quot;relationSearch&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;ignoreTablePrefix&quot;:true,&quot;tableName&quot;:&quot;default&quot;,&quot;headerTotalColumn&quot;:false,&quot;footerTotalColumn&quot;:false,&quot;setUp&quot;:[{&quot;header&quot;:[{&quot;name&quot;:&quot;header&quot;,&quot;searchInput&quot;:true,&quot;toggleColumns&quot;:true,&quot;softDeletes&quot;:false,&quot;showMessageSoftDeletes&quot;:false,&quot;includeViewOnTop&quot;:&quot;&quot;,&quot;includeViewOnBottom&quot;:&quot;&quot;,&quot;wireLoading&quot;:true},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Header&quot;,&quot;s&quot;:&quot;wrbl&quot;}],&quot;footer&quot;:[{&quot;name&quot;:&quot;footer&quot;,&quot;perPage&quot;:10,&quot;perPageValues&quot;:[[10,25,50,100,0],{&quot;s&quot;:&quot;arr&quot;}],&quot;recordCount&quot;:&quot;full&quot;,&quot;pagination&quot;:null,&quot;includeViewOnTop&quot;:&quot;&quot;,&quot;includeViewOnBottom&quot;:&quot;&quot;},{&quot;class&quot;:&quot;PowerComponents\\LivewirePowerGrid\\Footer&quot;,&quot;s&quot;:&quot;wrbl&quot;}],&quot;detail&quot;:[{&quot;name&quot;:&quot;detail&quot;,&quot;view&quot;:&quot;components.kurseinformationen-detail&quot;,&quot;options&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;state&quot;:[{&quot;8650&quot;:false,&quot;8284&quot;:false,&quot;8660&quot;:false,&quot;8065&quot;:false,&quot;8526&quot;:false,&quot;6623&quot;:false,&quot;8685&quot;:false,&quot;8085&quot;:false,&quot;8534&quot;:false,&quot;8302&quot;:false},{&quot;s&quot;:&quot;arr&quot;}],&quot;showCollapseIcon&quot;:true,&quot;viewIcon&quot;:&quot;&quot;,&quot;collapseOthers&quot;:true},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;showErrorBag&quot;:false,&quot;rowIndex&quot;:true,&quot;total&quot;:169,&quot;totalCurrentPage&quot;:10,&quot;searchMorphs&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;deferLoading&quot;:false,&quot;readyToLoad&quot;:true,&quot;loadingComponent&quot;:&quot;&quot;,&quot;showFilters&quot;:false,&quot;actions&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;paginators&quot;:[{&quot;page&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],&quot;sortDirection&quot;:&quot;asc&quot;,&quot;withSortStringNumber&quot;:false,&quot;multiSort&quot;:false,&quot;sortArray&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;checkbox&quot;:false,&quot;checkboxAll&quot;:false,&quot;checkboxValues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;checkboxAttribute&quot;:&quot;id&quot;,&quot;radio&quot;:null,&quot;radioAttribute&quot;:&quot;id&quot;,&quot;selectedRow&quot;:&quot;&quot;,&quot;filters&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;enabledFilters&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;select&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;persist&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;softDeletes&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;rvZbvo3aMf3rTLyBCnh3&quot;,&quot;name&quot;:&quot;kurse-information-table&quot;,&quot;path&quot;:&quot;courseinformations&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;de&quot;},&quot;checksum&quot;:&quot;9c5d39ab747d5118a154a46270eb7d4ea2e446e419089418d5a93610f5f15ae3&quot;}" wire:effects="{&quot;url&quot;:{&quot;paginators.page&quot;:{&quot;as&quot;:&quot;page&quot;,&quot;use&quot;:&quot;push&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null}},&quot;listeners&quot;:[&quot;addKurs&quot;,&quot;removeKurs&quot;,&quot;pg:toggleColumn-default&quot;,&quot;pg:eventRefresh-default&quot;,&quot;pg:datePicker-default&quot;,&quot;pg:multiSelect-default&quot;,&quot;pg:editable-default&quot;,&quot;pg:toggleable-default&quot;,&quot;pg:softDeletes-default&quot;]}" wire:id="rvZbvo3aMf3rTLyBCnh3"
+    class="flex flex-col"
+    >
+    <div
+        id="power-grid-table-container"
+        class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
+    >
+        <div
+            id="power-grid-table-base"
+            class="py-2 align-middle inline-block min-w-full w-full sm:px-6 lg:px-8"
+        >
+
+            <div>
+        <div class="md:flex md:flex-row w-full justify-between items-center">
+        <div class="md:flex md:flex-row w-full">
+            <div>
+                <div>
+    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+</div>
+            </div>
+            <div class="flex flex-row justify-center items-center text-sm flex-wrap">
+                <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->    <div
+        x-data="{ open: false }"
+        class="mr-2 mt-2 sm:mt-0"
+        @click.outside="open = false"
+    >
+        <button
+            @click.prevent="open = ! open"
+            class="pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700
+    dark:ring-offset-pg-primary-800 dark:text-pg-primary-400 dark:bg-pg-primary-700"
+        >
+            <div class="flex">
+                <svg
+    class="h-5 w-5 w-5 h-5 text-pg-primary-500 dark:text-pg-primary-300"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+    />
+</svg>
+            </div>
+        </button>
+
+        <div
+            x-show="open"
+            x-cloak
+            x-transition:enter="transform duration-200"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transform duration-200"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90"
+            class="mt-2 py-2 w-48 bg-white shadow-xl absolute z-10 dark:bg-pg-primary-700"
+        >
+            <!--[if BLOCK]><![endif]-->                <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'id'})"
+                        wire:key="toggle-column-id"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Nr.
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'Kurstitel'})"
+                        wire:key="toggle-column-Kurstitel"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Kurstitel
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'Dozent_Name'})"
+                        wire:key="toggle-column-Dozent_Name"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Dozent
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'Kurskategorie_Bezeichnung'})"
+                        wire:key="toggle-column-Kurskategorie_Bezeichnung"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Kategorie
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'KursAnrechenbareZeit'})"
+                        wire:key="toggle-column-KursAnrechenbareZeit"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        a. Zeit
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'MaxTeilnehmeranzahl'})"
+                        wire:key="toggle-column-MaxTeilnehmeranzahl"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        m. Tn.
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'AnzahlBuchungen'})"
+                        wire:key="toggle-column-AnzahlBuchungen"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Buch.
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'AnzahlReservierung'})"
+                        wire:key="toggle-column-AnzahlReservierung"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Res.
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: 'Kurszeiten'})"
+                        wire:key="toggle-column-Kurszeiten"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Kurszeiten
+                    </div>
+                </div>
+                            <div
+                        wire:click="$dispatch('pg:toggleColumn-default', { field: ''})"
+                        wire:key="toggle-column-"
+                        class=" cursor-pointer flex justify-start block px-4 py-2 text-pg-primary-800 hover:bg-pg-primary-50 hover:text-black-200 dark:text-pg-primary-200 dark:hover:bg-gray-900 dark:hover:bg-pg-primary-700"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    />
+</svg>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <div class="ml-2">
+                        Funktion
+                    </div>
+                </div>
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    </div>
+ <!--[if ENDBLOCK]><![endif]-->
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                                    <div
+    wire:key="toggle-filters-default')"
+    id="toggle-filters"
+    class="flex mr-2 mt-2 sm:mt-0 gap-3"
+>
+    <button
+        wire:click="toggleFilters"
+        type="button"
+        class="pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700
+    dark:ring-offset-pg-primary-800 dark:text-pg-primary-400 dark:bg-pg-primary-700"
+    >
+        <svg
+    class="h-5 w-5 h-4 w-4 text-pg-primary-500 dark:text-pg-primary-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="w-4 h-4"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z"
+    />
+</svg>
+    </button>
+</div>
+                 <!--[if ENDBLOCK]><![endif]-->
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+            </div>
+            <div class="hidden lg:!block">
+    <div
+        wire:loading
+        class="mt-2 hidden"
+    >
+        <svg
+            class="animate-spin h-5 w-5 text-pg-primary-300 dark:text-pg-primary-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+        >
+            <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+            ></circle>
+            <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+        </svg>
+    </div>
+</div>
+        </div>
+        <!--[if BLOCK]><![endif]-->    <div class="flex flex-row mt-2 md:mt-0 w-full rounded-full flex justify-start sm:justify-center md:justify-end">
+        <div class="group relative rounded-full w-full md:w-4/12 float-end float-right md:w-full lg:w-1/2">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-1">
+                <span class="p-1 focus:outline-none focus:shadow-outline">
+                    <svg
+    class="h-5 w-5 text-pg-primary-300 mr-2 w-5 h-5 dark:text-pg-primary-200" style=";"
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    class="w-6 h-6 dark:text-gray-300 text-gray-400"
+>
+    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+</svg>
+                </span>
+            </span>
+            <input
+                wire:model.live.debounce.700ms="search"
+                type="text"
+                class="placeholder-pg-primary-400 text-sm pl-[36px] block w-full float-right bg-white text-pg-primary-700 border border-pg-primary-300 rounded-lg py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 pl-10 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600"
+                style=""
+                placeholder="Suche"
+            >
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    </div>
+ <!--[if ENDBLOCK]><![endif]-->
+    </div>
+
+    <div>
+         <!--[if ENDBLOCK]><![endif]-->
+</div>
+    <!--[if ENDBLOCK]><![endif]-->
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+</div>
+
+                            
+                                    <div
+    x-data="{ open: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('showFilters').live }"
+    class="mt-2 md:mt-0"
+>
+    <div
+        x-show="open"
+        x-cloak
+        x-transition:enter="transform duration-100"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transform duration-100"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+        class="pg-filter-container"
+    >
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-3">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <div>
+    
+    <!--[if BLOCK]><![endif]-->        <div
+            class="min-w-[9.5rem]"
+            style=""
+        >
+            <!--[if BLOCK]><![endif]-->                <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                    Nr.
+                </label>
+             <!--[if ENDBLOCK]><![endif]-->
+            <div class="">
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div class="pt-1">
+                    <input
+                        wire:key="input-id"
+                        data-id="id"
+                                                        wire:model.live.debounce.700ms="filters.input_text.id" wire:input.debounce.700ms="filterInputText('id', $event.target.value, 'Nr.')"                         type="text"
+                        class="power_grid w-full block bg-white text-pg-primary-700 border border-pg-primary-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 placeholder-pg-primary-400 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600"
+                        placeholder=""
+                    />
+                </div>
+            </div>
+        </div>
+     <!--[if ENDBLOCK]><![endif]-->
+</div>
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <div>
+    
+    <!--[if BLOCK]><![endif]-->        <div
+            class="min-w-[9.5rem]"
+            style=""
+        >
+            <!--[if BLOCK]><![endif]-->                <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                    Kurstitel
+                </label>
+             <!--[if ENDBLOCK]><![endif]-->
+            <div class="">
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div class="pt-1">
+                    <input
+                        wire:key="input-Kurstitel"
+                        data-id="Kurstitel"
+                                                        wire:model.live.debounce.700ms="filters.input_text.Kurstitel" wire:input.debounce.700ms="filterInputText('Kurstitel', $event.target.value, 'Kurstitel')"                         type="text"
+                        class="power_grid w-full block bg-white text-pg-primary-700 border border-pg-primary-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 placeholder-pg-primary-400 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600"
+                        placeholder=""
+                    />
+                </div>
+            </div>
+        </div>
+     <!--[if ENDBLOCK]><![endif]-->
+</div>
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <div>
+    
+    <!--[if BLOCK]><![endif]-->        <div
+            class="min-w-[9.5rem]"
+            style=""
+        >
+            <!--[if BLOCK]><![endif]-->                <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                    Dozent
+                </label>
+             <!--[if ENDBLOCK]><![endif]-->
+            <div class="">
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div class="pt-1">
+                    <input
+                        wire:key="input-Dozent_Name"
+                        data-id="Dozent_Name"
+                                                        wire:model.live.debounce.700ms="filters.input_text.Dozent_Name" wire:input.debounce.700ms="filterInputText('Dozent_Name', $event.target.value, 'Dozent')"                         type="text"
+                        class="power_grid w-full block bg-white text-pg-primary-700 border border-pg-primary-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 placeholder-pg-primary-400 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600"
+                        placeholder=""
+                    />
+                </div>
+            </div>
+        </div>
+     <!--[if ENDBLOCK]><![endif]-->
+</div>
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <div>
+    
+    <!--[if BLOCK]><![endif]-->        <div
+            class="min-w-[9.5rem]"
+            style=""
+        >
+            <!--[if BLOCK]><![endif]-->                <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                    Kategorie
+                </label>
+             <!--[if ENDBLOCK]><![endif]-->
+            <div class="">
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div class="pt-1">
+                    <input
+                        wire:key="input-Kurskategorie_Bezeichnung"
+                        data-id="Kurskategorie_Bezeichnung"
+                                                        wire:model.live.debounce.700ms="filters.input_text.Kurskategorie_Bezeichnung" wire:input.debounce.700ms="filterInputText('Kurskategorie_Bezeichnung', $event.target.value, 'Kategorie')"                         type="text"
+                        class="power_grid w-full block bg-white text-pg-primary-700 border border-pg-primary-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 placeholder-pg-primary-400 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600"
+                        placeholder=""
+                    />
+                </div>
+            </div>
+        </div>
+     <!--[if ENDBLOCK]><![endif]-->
+</div>
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <!--[if BLOCK]><![endif]-->    <div
+        class="min-w-[9.5rem]"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                Kursart
+            </label>
+         <!--[if ENDBLOCK]><![endif]-->
+        <div class="pt-1 relative">
+            <select
+                class="appearance-none block bg-white border border-pg-primary-300 text-pg-primary-700 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 w-full dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600   power_grid"
+                style=""
+                wire:model.live.debounce.500ms="filters.select.Kursart" wire:input.debounce.500ms="filterSelect('Kursart', 'Kursart')"
+            >
+                <option value="">Alle</option>
+                <!--[if BLOCK]><![endif]-->                    <option
+                        wire:key="select-default-0"
+                        value="Exkursion"
+                    >
+                        Exkursion
+                    </option>
+                                    <option
+                        wire:key="select-default-1"
+                        value="wiederholter Kurs"
+                    >
+                        wiederholter Kurs
+                    </option>
+                 <!--[if ENDBLOCK]><![endif]-->
+            </select>
+            <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
+                <svg
+    class="pointer-events-none w-4 h-4 dark:text-gray-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+    />
+</svg>
+            </div>
+        </div>
+    </div>
+ <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <!--[if BLOCK]><![endif]-->    <div
+        class="min-w-[9.5rem]"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                a. Zeit
+            </label>
+         <!--[if ENDBLOCK]><![endif]-->
+        <div class="pt-1 relative">
+            <select
+                class="appearance-none block bg-white border border-pg-primary-300 text-pg-primary-700 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 w-full dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600   power_grid"
+                style=""
+                wire:model.live.debounce.500ms="filters.select.KursAnrechenbareZeit" wire:input.debounce.500ms="filterSelect('KursAnrechenbareZeit', 'a. Zeit')"
+            >
+                <option value="">Alle</option>
+                <!--[if BLOCK]><![endif]-->                    <option
+                        wire:key="select-default-0"
+                        value="1"
+                    >
+                        1
+                    </option>
+                                    <option
+                        wire:key="select-default-1"
+                        value="2"
+                    >
+                        2
+                    </option>
+                                    <option
+                        wire:key="select-default-2"
+                        value="3"
+                    >
+                        3
+                    </option>
+                                    <option
+                        wire:key="select-default-3"
+                        value="4"
+                    >
+                        4
+                    </option>
+                                    <option
+                        wire:key="select-default-4"
+                        value="5"
+                    >
+                        5
+                    </option>
+                                    <option
+                        wire:key="select-default-5"
+                        value="7"
+                    >
+                        7
+                    </option>
+                                    <option
+                        wire:key="select-default-6"
+                        value="15"
+                    >
+                        15
+                    </option>
+                 <!--[if ENDBLOCK]><![endif]-->
+            </select>
+            <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
+                <svg
+    class="pointer-events-none w-4 h-4 dark:text-gray-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+    />
+</svg>
+            </div>
+        </div>
+    </div>
+ <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <!--[if BLOCK]><![endif]-->    <div
+        class="min-w-[9.5rem]"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                Wochentage
+            </label>
+         <!--[if ENDBLOCK]><![endif]-->
+        <div class="pt-1 relative">
+            <select
+                class="appearance-none block bg-white border border-pg-primary-300 text-pg-primary-700 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 w-full dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600   power_grid"
+                style=""
+                wire:model.live.debounce.500ms="filters.select.Wochentage" wire:input.debounce.500ms="filterSelect('Wochentage', 'Wochentage')"
+            >
+                <option value="">Alle</option>
+                <!--[if BLOCK]><![endif]-->                    <option
+                        wire:key="select-default-0"
+                        value="Day1"
+                    >
+                        Freitag(1)
+                    </option>
+                                    <option
+                        wire:key="select-default-1"
+                        value="Day2"
+                    >
+                        Montag(2)
+                    </option>
+                                    <option
+                        wire:key="select-default-2"
+                        value="Day3"
+                    >
+                        Dienstag(3)
+                    </option>
+                                    <option
+                        wire:key="select-default-3"
+                        value="Day4"
+                    >
+                        Mittwoch(4)
+                    </option>
+                                    <option
+                        wire:key="select-default-4"
+                        value="Day5"
+                    >
+                        Donnerstag(5)
+                    </option>
+                 <!--[if ENDBLOCK]><![endif]-->
+            </select>
+            <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
+                <svg
+    class="pointer-events-none w-4 h-4 dark:text-gray-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+    />
+</svg>
+            </div>
+        </div>
+    </div>
+ <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div class="">
+                            <!--[if BLOCK]><![endif]-->    <div
+        class="min-w-[9.5rem]"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <label class="block text-sm font-medium text-pg-primary-700 dark:text-pg-primary-300">
+                Stunden
+            </label>
+         <!--[if ENDBLOCK]><![endif]-->
+        <div class="pt-1 relative">
+            <select
+                class="appearance-none block bg-white border border-pg-primary-300 text-pg-primary-700 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 w-full dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600   power_grid"
+                style=""
+                wire:model.live.debounce.500ms="filters.select.Stunden" wire:input.debounce.500ms="filterSelect('Stunden', 'Stunden')"
+            >
+                <option value="">Alle</option>
+                <!--[if BLOCK]><![endif]-->                    <option
+                        wire:key="select-default-0"
+                        value="1. Stunde"
+                    >
+                        1. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-1"
+                        value="2. Stunde"
+                    >
+                        2. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-2"
+                        value="3. Stunde"
+                    >
+                        3. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-3"
+                        value="4. Stunde"
+                    >
+                        4. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-4"
+                        value="5. Stunde"
+                    >
+                        5. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-5"
+                        value="6. Stunde"
+                    >
+                        6. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-6"
+                        value="7. Stunde"
+                    >
+                        7. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-7"
+                        value="8. Stunde"
+                    >
+                        8. Stunde
+                    </option>
+                                    <option
+                        wire:key="select-default-8"
+                        value="9. Stunde"
+                    >
+                        9. Stunde
+                    </option>
+                 <!--[if ENDBLOCK]><![endif]-->
+            </select>
+            <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
+                <svg
+    class="pointer-events-none w-4 h-4 dark:text-gray-300"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+    />
+</svg>
+            </div>
+        </div>
+    </div>
+ <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                     <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    </div>
+</div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+
+            <div
+                class="overflow-auto my-3 rounded-lg relative border border-pg-primary-200 dark:bg-pg-primary-700 dark:border-pg-primary-600"
+                style=""
+            >
+                <div >
+    <table
+        class="table power-grid-table min-w-full dark:bg-slate-800"
+        style=""
+    >
+        <thead
+            class="shadow-sm rounded-t-lg bg-pg-primary-200 dark:bg-gray-900"
+            style=""
+        >
+            <tr
+    class=""
+    style=""
+>
+    <!--[if BLOCK]><![endif]-->        <!--[if BLOCK]><![endif]-->            <th
+                scope="col"
+                class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize"
+                style=""
+                wire:key="show-collapse-default"
+            >
+            </th>
+         <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]-->            <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('id')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Nr.</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('Kurstitel')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8595;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Kurstitel</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('Dozent_Name')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Dozent</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('Kurskategorie_Bezeichnung')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Kategorie</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('Kursart')"     style="display:none; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Kursart</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('KursAnrechenbareZeit')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>a. Zeit</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('MaxTeilnehmeranzahl')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>m. Tn.</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('AnzahlBuchungen')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Buch.</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+         x-multisort-shift-click="rvZbvo3aMf3rTLyBCnh3" wire:click="sortBy('AnzahlReservierung')"     style="; width: max-content;  cursor:pointer;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span>
+                &#8597;
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Res.</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+            style="; width: max-content;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span style="width: 6px"></span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Kurszeiten</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+            style="display:none; width: max-content;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span style="width: 6px"></span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Beschreibung</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+            style="display:none; width: max-content;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span style="width: 6px"></span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Wochentage</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+            style="display:none; width: max-content;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span style="width: 6px"></span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Stunden</span>
+    </div>
+</th>
+                    <th
+        class="font-semibold px-2 pr-4 py-3 text-left text-sm font-semibold text-pg-primary-700 tracking-wider whitespace-nowrap dark:text-pg-primary-300 capitalize "
+            style="; width: max-content;   "
+>
+    <div
+        class="select-none"
+        style=""
+    >
+        <!--[if BLOCK]><![endif]-->            <span style="width: 6px"></span>
+         <!--[if ENDBLOCK]><![endif]-->
+        <span>Funktion</span>
+    </div>
+</th>
+         <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+     <!--[if ENDBLOCK]><![endif]-->
+</tr>
+        </thead>
+        <!--[if BLOCK]><![endif]-->            <tbody
+                class="text-pg-primary-800"
+                style=""
+            >
+                <!--[if BLOCK]><![endif]-->            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+         <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]-->                        <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8650"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8650') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8650')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8650</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>¿Hablas español? - ein Schnupperkurs für Anfänger in Spanisch</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Göbel, Christina</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Fremdsprache</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>2</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>25</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Mi 4. Std.<br>Mi 5. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8650-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8650}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8650-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8284"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8284') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8284')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8284</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>&quot;Auf kleiner Flamme&quot; - Energiearmut konkret (Workshop - bitte Beschreibung lesen!)</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Paul, Dr. Dagmar</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Fachübergreifend</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>2</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>20</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Mi 4. Std.<br>Mi 5. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8284-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8284}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8284-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8660"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8660') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8660')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8660</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>&quot;Ein Bild sagt mehr als tausend Worte&quot; - heißt es. Tatsächlich?</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Leopold, Jörg</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Medienerziehung</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>2</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>20</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Fr 4. Std.<br>Fr 5. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8660-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8660}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8660-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8065"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8065') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8065')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8065</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>&quot;Irgendwas mit Technik“ – technische Studiengänge</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Prof. Dr. Malberg, Hagen</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Berufsorientierung</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>2</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>40</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Do 2. Std.<br>Do 3. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8065-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8065}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8065-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8526"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8526') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8526')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8526</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>&quot;Meine Oma erkennt mich nicht mehr&quot; Umgang mit Demenz</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Herold, Uta</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Sonstiges</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>2</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>25</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Mo 2. Std.<br>Mo 3. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8526-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8526}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8526-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-6623"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.6623') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('6623')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>6623</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>&quot;Taizé - Musik und Stille als Gebet&quot;</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Heine, Ulrich</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Fachübergreifend</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>3</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>25</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Di 4. Std.<br>Di 5. Std.<br>Di 6. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-6623-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:6623}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-6623-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8685"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8685') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8685')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8685</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>&quot;Was wird aus uns?&quot; - Mit Theater forschen</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Engler, Anke</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Darstellendes Spiel</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>4</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>12</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Di 2. Std.<br>Di 3. Std.<br>Mi 4. Std.<br>Mi 5. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8685-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8685}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8685-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8085"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8085') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8085')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8085</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>[AUSWEG]LOS – Krise- und Suizidprävention</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Dozent, Prävention</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Medizin</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>3</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>22</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Mi 4. Std.<br>Mi 5. Std.<br>Mi 6. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8085-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8085}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8085-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8534"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8534') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8534')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8534</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Ab ins Labor - Honig – süße Leidenschaft von fleißigen Bienchen</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Schwarz, Friedrich</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Biologie</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>4</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>15</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Mi 7. Std.<br>Mi 8. Std.<br>Mi, 9. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8534-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8534}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8534-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                
+                <!--[if BLOCK]><![endif]-->                    <tbody
+                        wire:key="tbody-8302"
+                        class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        x-data="{ detailState: window.Livewire.find('rvZbvo3aMf3rTLyBCnh3').entangle('setUp.detail.state.8302') }"
+                    >
+                        <td
+    class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200"
+    style=""
+>
+    <div
+        class="cursor-pointer"
+        x-on:click.prevent="$wire.toggleDetail('8302')"
+    >
+        
+        <!--[if BLOCK]><![endif]-->            <svg
+    class="text-pg-primary-600 w-5 h-5 transition-all duration-300 dark:text-pg-primary-200" x-bind:class="detailState ? 'rotate-90' : '-rotate-0'"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+    />
+</svg>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+</td>
+
+
+
+<!--[if BLOCK]><![endif]-->        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-id"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>8302</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurstitel"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Alles im Lot? - Einführung in die Kunst des Lötens und den Bau von Schaltkreisen</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Dozent_Name"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Stadler, Philipp</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurskategorie_Bezeichnung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Physik</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-KursAnrechenbareZeit"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>2</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-MaxTeilnehmeranzahl"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>20</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlBuchungen"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-AnzahlReservierung"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>0</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-Kurszeiten"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div>Do 2. Std.<br>Do 3. Std.</div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+        <td
+        class="pl-[10px] px-3 py-2 text-sm dark:text-pg-primary-200 "
+        style=";  "
+        wire:key="row-"
+    >
+        <div class="pg-actions">
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    <div wire:key="action-8302-render-action.0.addKursButton">
+                        <button wire:click="$dispatch(&#039;addKurs&#039;, JSON.parse(&#039;{\u0022kursID\u0022:8302}&#039;))" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" title="Diesen Kurs zum Stundenplan hinzufügen">Auswählen</button>
+                    </div>
+                                    <div wire:key="action-8302-render-action.1.removeKursButton">
+                        
+                    </div>
+                 <!--[if ENDBLOCK]><![endif]-->
+             <!--[if ENDBLOCK]><![endif]-->
+        </div>
+
+        <!--[if BLOCK]><![endif]-->            <span class=" ">
+                <div></div>
+            </span>
+         <!--[if ENDBLOCK]><![endif]-->
+    </td>
+ <!--[if ENDBLOCK]><![endif]-->
+                        <tr
+                            x-show="detailState"
+                            style=""
+                            class="border-b border-pg-primary-100 dark:border-pg-primary-600 hover:bg-pg-primary-50 dark:bg-pg-primary-800 dark:hover:bg-pg-primary-700"
+                        >
+                            <template
+    x-cloak
+    x-if="detailState"
+>
+    <td colspan="999">
+        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+    </td>
+</template>
+                        </tr>
+                    </tbody>
+                 <!--[if ENDBLOCK]><![endif]-->
+
+                             <!--[if ENDBLOCK]><![endif]-->
+
+                     <!--[if ENDBLOCK]><![endif]-->
+            </tbody>
+         <!--[if ENDBLOCK]><![endif]-->
+    </table>
+</div>
+            </div>
+
+            <div>
+        <div class="justify-between md:flex md:flex-row w-full items-center py-3 bg-white overflow-y-auto pl-2 pr-2 relative
+                                         dark:bg-pg-primary-900">
+                    <div class="flex flex-row justify-center md:justify-start mb-2 md:mb-0">
+                <div class="relative h-10">
+                    <select
+                        wire:model.live="setUp.footer.perPage"
+                        class="block appearance-none bg-pg-primary-50 border border-pg-primary-300 text-pg-primary-700 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 dark:bg-pg-primary-700 dark:text-pg-primary-200 dark:placeholder-pg-primary-200 dark:border-pg-primary-600"
+                    >
+                        <!--[if BLOCK]><![endif]-->                            <option value="10">
+                                <!--[if BLOCK]><![endif]-->                                    10
+                                 <!--[if ENDBLOCK]><![endif]-->
+                            </option>
+                                                    <option value="25">
+                                <!--[if BLOCK]><![endif]-->                                    25
+                                 <!--[if ENDBLOCK]><![endif]-->
+                            </option>
+                                                    <option value="50">
+                                <!--[if BLOCK]><![endif]-->                                    50
+                                 <!--[if ENDBLOCK]><![endif]-->
+                            </option>
+                                                    <option value="100">
+                                <!--[if BLOCK]><![endif]-->                                    100
+                                 <!--[if ENDBLOCK]><![endif]-->
+                            </option>
+                                                    <option value="0">
+                                <!--[if BLOCK]><![endif]-->                                    Alle
+                                 <!--[if ENDBLOCK]><![endif]-->
+                            </option>
+                         <!--[if ENDBLOCK]><![endif]-->
+                    </select>
+
+                    <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
+                        <svg
+    class="pointer-events-none w-4 h-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+>
+    <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+    />
+</svg>
+                    </div>
+                </div>
+                <div
+                    class="pl-4 hidden sm:block md:block lg:block w-full"
+                    style="padding-top: 6px;"
+                >
+                </div>
+            </div>
+         <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]-->            <div>
+                <!--[if BLOCK]><![endif]-->                    <div class="items-center justify-between sm:flex">
+    <div class="items-center justify-between w-full sm:flex-1 sm:flex">
+        <!--[if BLOCK]><![endif]-->            <div>
+                <div
+                    class="mr-2 leading-5 text-center text-pg-primary-700 text-md dark:text-pg-primary-300 sm:text-right">
+                    Anzeigen von
+                    <span class="font-semibold firstItem">1</span>
+                    bis
+                    <span class="font-semibold lastItem">10</span>
+                    von
+                    <span class="font-semibold total">169</span>
+                    Ergebnissen
+                </div>
+            </div>
+         <!--[if ENDBLOCK]><![endif]-->
+
+        <!--[if BLOCK]><![endif]-->            <nav
+                role="navigation"
+                aria-label="Pagination Navigation"
+                class="items-center justify-between sm:flex"
+            >
+                <div class="flex justify-center mt-2 md:flex-none md:justify-end sm:mt-0">
+
+                    <!--[if BLOCK]><![endif]-->
+                                                                                                         <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                    <span
+                                        class="px-2 py-1 m-1 text-center border-pg-primary-400 rounded cursor-pointer border-1 dark:bg-pg-primary-800 dark:text-white dark:text-pg-primary-300"
+                                    >1</span>
+                                 <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                    <a
+                                        class="px-2 py-1 m-1 text-center text-white bg-pg-primary-600 border-pg-primary-400 rounded cursor-pointer border-1 hover:bg-pg-primary-600 hover:border-pg-primary-800 dark:text-pg-primary-300"
+                                        wire:click="gotoPage(2)"
+                                    >2</a>
+                                 <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                    <a
+                                        class="px-2 py-1 m-1 text-center text-white bg-pg-primary-600 border-pg-primary-400 rounded cursor-pointer border-1 hover:bg-pg-primary-600 hover:border-pg-primary-800 dark:text-pg-primary-300"
+                                        wire:click="gotoPage(3)"
+                                    >3</a>
+                                 <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                                                                                                                                                                         <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                    <div class="mx-1 mt-1 text-pg-primary-600 dark:text-pg-primary-300">
+                                        <span>.</span>
+                                        <span>.</span>
+                                        <span>.</span>
+                                    </div>
+                                                                                             <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                                <!--[if BLOCK]><![endif]-->                                                                        
+                                                                        <a
+                                class="px-2 py-1 pt-2 m-1 text-center text-white bg-pg-primary-600 border-pg-primary-400 rounded cursor-pointer border-1 hover:bg-pg-primary-600 hover:border-pg-primary-800 dark:text-pg-primary-300"
+                                wire:click="nextPage"
+                                rel="next"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-chevron-compact-right"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"
+                                    />
+                                </svg>
+                            </a>
+                         <!--[if ENDBLOCK]><![endif]-->
+                        <a
+                            class="px-2 py-1 pt-2 m-1 text-center text-white bg-pg-primary-600 border-pg-primary-400 rounded cursor-pointer border-1 hover:bg-pg-primary-600 hover:border-pg-primary-800 dark:text-pg-primary-300"
+                            wire:click="gotoPage(17)"
+                        >
+                            <svg
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-chevron-double-right"
+    viewBox="0 0 16 16"
+>
+    <path
+        fill-rule="evenodd"
+        d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+    <path
+        fill-rule="evenodd"
+        d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+</svg>
+                        </a>
+                     <!--[if ENDBLOCK]><![endif]-->
+                </div>
+            </nav>
+         <!--[if ENDBLOCK]><![endif]-->
+
+        <div>
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    </div>
+</div>
+
+                 <!--[if ENDBLOCK]><![endif]-->
+            </div>
+         <!--[if ENDBLOCK]><![endif]-->
+    </div>
+    </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+            </main>
+        </div>
+        <!-- component -->
+
+        <footer class="w-full text-gray-700 bg-gray-100 body-font mt-6">
+
+            <div class="bg-gray-300">
+                <div class="container px-5 py-4 mx-auto">
+                    <p class="text-sm text-gray-700 capitalize text-center">SAWware | St. Benno-Gymnasium</p>
+                </div>
+            </div>
+        </footer>
+
+        <div role="status" id="toaster" x-data="toasterHub([], JSON.parse('{\u0022alignment\u0022:\u0022middle\u0022,\u0022duration\u0022:4000}'))" class="fixed z-50 p-4 w-full flex flex-col pointer-events-none sm:p-6 top-1/2 -translate-y-1/2 items-end rtl:items-start">
+    <template x-for="toast in toasts" :key="toast.id">
+        <div x-show="toast.isVisible"
+             x-init="$nextTick(() => toast.show($el))"
+                          x-transition:enter-start="opacity-0 scale-90"
+             x-transition:enter-end="opacity-100 scale-100"
+                          x-transition:leave-end="opacity-0 scale-90"
+             class="relative duration-300 transform transition ease-in-out max-w-xs w-full pointer-events-auto"
+             :class="toast.select({ error: 'text-white', info: 'text-black', success: 'text-white', warning: 'text-white' })"
+        >
+            <i x-text="toast.message"
+               class="inline-block select-none not-italic px-6 py-3 rounded shadow-lg text-sm w-full mb-3"
+               :class="toast.select({ error: 'bg-red-500', info: 'bg-gray-200', success: 'bg-green-600', warning: 'bg-orange-500' })"
+            ></i>
+
+                        <button @click="toast.dispose()" aria-label="close" class="absolute right-0 p-2 focus:outline-none rtl:right-auto rtl:left-0 top-0">
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+                    </div>
+    </template>
+</div>
+    <script src="/livewire/livewire.js?id=8a199ab2"   data-csrf="Jy2tQ0b8jCUJ13W7CU6HrtGtnlKL3u55oaYjbbKg" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+</body>
+</html>

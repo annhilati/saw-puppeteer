@@ -1,5 +1,8 @@
-// Knopf über seine ID auswählen und klicken
-document.getElementById('button-id').click();
+// Liste der Kurs-IDs
+const kursIDs = [8650, 8651, 8652, 8653]; // Füge hier deine IDs hinzu
 
-// Alternativ über Klassenname
-document.querySelector('.button-class').click();
+// Schleife, um die Kurse automatisch zu wählen
+kursIDs.forEach(kursID => {
+    const kursData = JSON.stringify({ kursID }); // JSON-Daten mit der aktuellen Kurs-ID
+    Livewire.dispatch('addKurs', JSON.parse(kursData)); // Dispatch-Befehl ausführen
+});
