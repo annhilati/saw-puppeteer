@@ -1,7 +1,8 @@
 # Script zum Wählen von SAW-Kursen
 
 > [!IMPORTANT]
-> Wenn du keine oder nur wenig Erfahrung mit der Verwendung von Computern oder Webdevelopment hast, lies zunächst die gesammte Anleitung. 
+> Wenn du keine oder nur wenig Erfahrung mit der Verwendung von Computern oder Webdevelopment hast, lies zunächst die gesammte Anleitung. <br>
+> Die Anleitung geht ausserdem davon aus, dass du kein Steinzeitmensch bist und zumindest Text kopieren (Strg+C), einfügen (Strg+V) und zwischenspeichern (zum Beispiel in Windows' "Editor" Programm) kannst.
 
 ## Tutorial für Anfänger
 ### Vorbereitung
@@ -24,6 +25,16 @@
     const kursIDs = [5544, 7642, 8372, 8528, 8532, 8562, 8609];
     ```
 
+    Insgesammt muss das Script so aussehen:
+    ```js
+    const kursIDs = [5544, 7642, 8372, 8528, 8532, 8562, 8609];
+
+    kursIDs.forEach(kursID => {
+        const kursData = JSON.stringify({ kursID });
+        Livewire.dispatch('addKurs', JSON.parse(kursData)); 
+    });
+    ```
+
 3. **Öffne im Browser die Konsole**<br>
    Das machst du beispielsweise, indem du auf die SAWWare-Seite rechtsklickst und "Element untersuchen" o.ä. wählst. In den "Dev-Tools", die sich jetzt - meistens am rechten Bildschirmrand - geöffnet hat, bist du nun im "Elemente"/"Elements"-Tab.
 4. **Wechsle in den Dev-Tools zum "Konsole"-Tab**
@@ -37,7 +48,7 @@
 ### Wenn die Wahl begonnen hat
 7. **Lade die SAWWare-Seite neu und melde dich wenn nötig an, öffne die Kurswahlansicht**
    
-8. Kopiere (Strg+C) das fertige Script mit den IDs deiner Kurse und füge es in die Konsole ein (Strg+V), drücke anschließend Enter
+8. Kopiere das fertige Script mit den IDs deiner Kurse und füge es in die Konsole ein (Strg+V), drücke anschließend Enter
    
 9. Suche den Knopf auf der Wahlseite, mit dem die Wahl abgesendet wird und drücke ihn.
 
