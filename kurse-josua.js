@@ -1,8 +1,13 @@
-// Liste der Kurs-IDs
-const kursIDs = [8699, 5544, 7788, 8634, 8681]; // Füge hier deine IDs hinzu
+const kursIDs = [7788, 
+                 8176, 
+                 5544, 
+                 8606, 
+                 8699, 
+                 8634, 
+                 8681, 
+                 6286];
 
-// Schleife, um die Kurse automatisch zu wählen
 kursIDs.forEach(kursID => {
-    const kursData = JSON.stringify({ kursID }); // JSON-Daten mit der aktuellen Kurs-ID
-    Livewire.dispatch('addKurs', JSON.parse(kursData)); // Dispatch-Befehl ausführen
+    const kursData = JSON.stringify({ kursID });
+    Livewire.dispatch('addKurs', JSON.parse(kursData));
 });
