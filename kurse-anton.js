@@ -1,11 +1,4 @@
-const kursIDs = [
-    5544,
-    7642,
-    8372,
-    8528,
-    8532,
-    8562,
-    8609];
+const kursIDs = [8372, 7835, 8615, 5544, 5493, 8620];
 
 kursIDs.forEach(kursID => {
     const kursData = JSON.stringify({ kursID });
