@@ -24,9 +24,9 @@
     });
     ```
 
-3. **Öffne im Browser die Konsole**<br>
+3. **Öffne im Browser die Entwicklerwerkzeuge**<br>
    Das machst du beispielsweise, indem du auf der SAWWare-Seite irgendwo rechtsklickst und "Element untersuchen" o.ä. wählst. In den "Dev-Tools", die sich jetzt - meistens am rechten Bildschirmrand - geöffnet haben, bist du nun im "Elemente"/"Elements"-Tab gelandet.<br>
-5. **Wechsle in den Dev-Tools zum "Konsole"/"Console"-Tab**<br>
+5. **Wechsle zum "Konsole"/"Console"-Tab**<br>
    ![image](https://github.com/user-attachments/assets/6422feff-222f-4fd2-ac30-1e8c78879cdc)
 6. **Ggf. Konsole authorisieren**<br>
    Es kann sein, dass du als Sicherheitsfreigabe etwas bestimmtes in die Konsole schreiben musst. Das wird dort angezeigt und kann beispielsweise "Eingabe erlauben" heißen.
