@@ -44,6 +44,21 @@
 
 Done 🤙
 
+## Anleitung für Safari auf dem Tablet
+1. Installiere die App ["Web Inspector"](https://apps.apple.com/de/app/web-inspector/id1584825745) auf deinem iPad.
+
+2. Befolge die Anweisungen in der App, um die Erweiterung für Safari zu installieren.
+
+3. Starte die Erweiterung durch tippen auf das blaue i-symbol in der Suchleiste.
+
+4. Wechsle zum Tab 'Console'
+
+5. Füge das Skript wie in der normalen Anleitung ein.
+
+6. Drücke auf den 'Execute'-Button rechts.
+
+Done 🤙
+
 > [!NOTE]
 > Das Script ist in keiner Weise eine Garantie dafür, dass alle Kurse gewählt werden und ist zeitabhängig. Wenn ein Kurs ausgebucht ist, wird er nicht gewählt.
 
