@@ -50,6 +50,7 @@ Done 🤙
 2. Befolge die Anweisungen in der App, um die Erweiterung für Safari zu installieren.
 
 3. Starte die Erweiterung durch tippen auf das blaue i-symbol in der Suchleiste.
+   ![image]("https://github.com/user-attachments/assets/cfef477d-126a-4f08-b591-6111423bae5c")
 
 4. Wechsle zum Tab 'Console'
 
