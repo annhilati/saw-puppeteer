@@ -1,5 +1,9 @@
 # Analyse
 
+## Session
+- Die SAWware-Seite und die Kursauswahl ist Session-basiert
+- Die Session wird mit dem Login begonnen und endet mit dem schließen des letzten Tabs bzw dem Logout in einem beliebigen Tab
+
 ## Ablaufplan
 Zeit | Ereignisse
 ---- | ------------
