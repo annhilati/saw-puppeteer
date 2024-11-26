@@ -1,1 +1,2 @@
-*.html linguist-vendored
+analyse/* linguist-vendored
+beispiele/* linguist-generated
