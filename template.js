@@ -1,6 +1,6 @@
 // ⚙️ Hier Einstellungen vornehmen
-const kursIDs = [1001, 1002, 1003, 1004]; // Füge hier deine IDs hinzu
-const autoSend = false
+const kursIDs = [1001, 1002, 1003, 1004];
+const autoBook = false;
 
 
 // ⚠️ ACHTUNG: Hier nichts verändern
