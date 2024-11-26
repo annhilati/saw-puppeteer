@@ -26,4 +26,4 @@ window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
 Zeit | Ereignisse
 ---- | ------------
 T-0:30 | ❌ Login
-T-0:00 | 🗑️ Sessions<br>✅ Login
+T-0:00 | 🗑️ Sessions<br>✅ Login<br>✅ Verbindliches Buchen
