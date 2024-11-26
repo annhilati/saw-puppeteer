@@ -13,6 +13,12 @@ Livewire.dispatch('addKurs', { 5544 });
 Livewire.dispatch('removeKurs', { 5544 });
 ```
 
+### Verbindlich wählen
+Verbindlich kann gewählt werden, wann man mit einer gültigen Session `https://sawware.benno.webstitut.de/coursebooking/book` besucht
+```js
+window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
+```
+
 ## Session
 - Die SAWware-Seite und die Kursauswahl ist Session-basiert
 - Die Session wird mit dem Login begonnen und endet mit dem schließen des letzten Tabs bzw dem Logout in einem beliebigen Tab
