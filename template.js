@@ -1,9 +1,13 @@
-// Liste der Kurs-IDs
+// ⚙️ Hier Einstellungen vornehmen
 const kursIDs = [1001, 1002, 1003, 1004]; // Füge hier deine IDs hinzu
+const autoSend = false
 
-// Schleife, um die Kurse automatisch zu wählen
+
+// ⚠️ ACHTUNG: Hier nichts verändern
 kursIDs.forEach(kursID => {
-    const kursData = JSON.stringify({ kursID }); // JSON-Daten mit der aktuellen Kurs-ID
-    Livewire.dispatch('addKurs', JSON.parse(kursData)); // Dispatch-Befehl ausführen
+    Livewire.dispatch('addKurs', { kursID });
 });
-window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
+if (window.location.pathname === '/coursebooking' && autoSend) {
+    window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
+}
+
