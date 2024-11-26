@@ -13,7 +13,7 @@ Livewire.dispatch('removeKurs', { 5544 });
 ```
 
 ### Verbindlich wählen
-Verbindlich kann gewählt werden, wann man mit einer gültigen Session `https://sawware.benno.webstitut.de/coursebooking/book` besucht
+Verbindlich kann gewählt werden, wann man mit einer gültigen Session `https://sawware.benno.webstitut.de/coursebooking/book` besucht, während das Buchen freigeschaltet ist
 ```js
 window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
 ```
@@ -25,5 +25,5 @@ window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
 ## Ablaufplan
 Zeit | Ereignisse
 ---- | ------------
-halbe stunde vor beginn | Der Login wird deaktiviert
-Zu beginn | Sessions werden beendet<br>Login wird aktiviert
+T-0:30 | ❌ Login
+T-0:00 | 🗑️ Sessions<br>✅ Login
