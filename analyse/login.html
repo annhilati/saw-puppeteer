@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://sawware.benno.webstitut.de/login -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        
+
+        
+
+        <!-- Fonts -->
+        
+        <link href="./SAWware_files/css" rel="stylesheet">
+
+        <!-- Scripts -->
+        <link rel="stylesheet" href="./SAWware_files/app-b2f3d92f.css" data-navigate-track="reload"><link rel="stylesheet" href="./SAWware_files/app-b2b172a9.css" data-navigate-track="reload"><script type="module" src="./SAWware_files/app-d4f46087.js.Herunterladen" data-navigate-track="reload"></script>
+        <!-- Matomo -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- End Matomo Code -->
+    <!-- Livewire Styles --><style>[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+<style>/* Make clicks pass-through */
+
+    #nprogress {
+      pointer-events: none;
+    }
+
+    #nprogress .bar {
+      background: var(--livewire-progress-bar-color, #29d);
+
+      position: fixed;
+      z-index: 1031;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+    }
+
+    /* Fancy blur effect */
+    #nprogress .peg {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+      opacity: 1.0;
+
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+          -ms-transform: rotate(3deg) translate(0px, -4px);
+              transform: rotate(3deg) translate(0px, -4px);
+    }
+
+    /* Remove these to get rid of the spinner */
+    #nprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+
+    #nprogress .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+
+      border: solid 2px transparent;
+      border-top-color: var(--livewire-progress-bar-color, #29d);
+      border-left-color: var(--livewire-progress-bar-color, #29d);
+      border-radius: 50%;
+
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+              animation: nprogress-spinner 400ms linear infinite;
+    }
+
+    .nprogress-custom-parent {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nprogress-custom-parent #nprogress .spinner,
+    .nprogress-custom-parent #nprogress .bar {
+      position: absolute;
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes nprogress-spinner {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="csrf-token" content="uoPOxPI39UCYLLiCwnKXxGYyrKih22u1DtRME6jx"><title>SAWware</title><link rel="preconnect" href="https://fonts.bunny.net/"><link rel="preload" as="style" href="./SAWware_files/app-b2f3d92f.css"><link rel="preload" as="style" href="./SAWware_files/app-b2b172a9.css"><link rel="modulepreload" href="./SAWware_files/app-d4f46087.js.Herunterladen"></head>
+    <body class="font-sans text-gray-900 antialiased">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                <div wire:snapshot="{&quot;data&quot;:{&quot;form&quot;:[{&quot;username&quot;:&quot;&quot;,&quot;password&quot;:&quot;&quot;,&quot;remember&quot;:false},{&quot;class&quot;:&quot;App\\Livewire\\Forms\\LoginForm&quot;,&quot;s&quot;:&quot;form&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;QUxSA8O8awdb2oyeLIXC&quot;,&quot;name&quot;:&quot;pages.auth.login&quot;,&quot;path&quot;:&quot;login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;de&quot;},&quot;checksum&quot;:&quot;f041f7454869610517f09dbd10ced4c945fa9656f25aca5fdc9ec3eb78b89db1&quot;}" wire:effects="[]" wire:id="QUxSA8O8awdb2oyeLIXC">
+    <!-- Session Status -->
+    
+    <form wire:submit="login">
+        <!-- Username -->
+        <div>
+            <label class="block font-medium text-sm text-gray-700" for="username">
+    Nutzername
+</label>
+            <input class="power_grid w-full block bg-white text-pg-primary-700 border border-pg-primary-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 placeholder-pg-primary-400 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600 block mt-1 w-full" wire:model="form.username" id="username" type="text" name="username" required="required" autofocus="autofocus" autocomplete="username">
+                    </div>
+
+        <!-- Password -->
+        <div class="mt-4">
+            <label class="block font-medium text-sm text-gray-700" for="password">
+    Passwort
+</label>
+
+            <input class="power_grid w-full block bg-white text-pg-primary-700 border border-pg-primary-300 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 placeholder-pg-primary-400 dark:bg-pg-primary-800 dark:text-pg-primary-200 dark:placeholder-pg-primary-300 dark:border-pg-primary-600 block mt-1 w-full" wire:model="form.password" id="password" type="password" name="password" required="required" autocomplete="current-password">
+
+                    </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 ms-3 ms-3">
+    Anmelden
+</button>
+        </div>
+    </form>
+</div>
+            </div>
+        </div>
+    <script src="./SAWware_files/livewire.js.Herunterladen" data-csrf="uoPOxPI39UCYLLiCwnKXxGYyrKih22u1DtRME6jx" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+</body></html>
