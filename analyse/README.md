@@ -27,3 +27,11 @@ Zeit | Ereignisse
 ---- | ------------
 T-0:30 | ❌ Login
 T-0:00 | 🗑️ Sessions<br>✅ Login<br>✅ Verbindliches Buchen
+
+## Weiterleitungen
+Wenn keine gültige Session besteht, wird man zu `/login` weitergeleitet
+URL | Keine Kursansicht | Kursansicht | Kurswahl
+--- | ----------------- | ----------- | -----------
+courseinformations |  | - | 
+coursebooking |  |  |
+coursebooking/book |  |  |
