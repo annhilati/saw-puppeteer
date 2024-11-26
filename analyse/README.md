@@ -1,5 +1,4 @@
 # Analyse
-
 ## Funktionsweise
 ### Kurse hinzufügen
 ```js
