@@ -9,5 +9,4 @@ kursIDs.forEach(kursID => {
 });
 if (window.location.pathname === '/coursebooking' && autoSend) {
     window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
-}
-
+};
