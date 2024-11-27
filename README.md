@@ -16,12 +16,18 @@
 
     Insgesammt muss das Script so aussehen:
     ```js
-    const kursIDs = [5544, 7642, 8372, 8528, 8532, 8562, 8609];
+    // ⚙️ Hier Einstellungen vornehmen
+   const kursIDs = [1001, 1002, 1003, 1004];
+   const autoBook = false;
+   
 
-    kursIDs.forEach(kursID => {
-        const kursData = JSON.stringify({ kursID });
-        Livewire.dispatch('addKurs', JSON.parse(kursData)); 
-    });
+   // ⚠️ ACHTUNG: Hier nichts verändern
+   kursIDs.forEach(kursID => {
+      Livewire.dispatch('addKurs', { kursID });
+   });
+   if (window.location.pathname === '/coursebooking' && autoSend) {
+       window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
+   };
     ```
 
 3. **Öffne im Browser die Entwicklerwerkzeuge**<br>
