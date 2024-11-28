@@ -1,2 +1,5 @@
-analyse/* linguist-vendored
+analyse/*.html linguist-vendored
+analyse/*.js linguist-vendored
+analyse/*.css linguist-vendored
+analyse/autologin.js linguist-vendored=false
 beispiele/* linguist-generated
