@@ -7,6 +7,6 @@ const autoBook = false;
 kursIDs.forEach(kursID => {
     Livewire.dispatch('addKurs', { kursID });
 });
-if (window.location.pathname === '/coursebooking' && autoSend) {
+if (window.location.pathname === '/coursebooking' && autoBook) {
     window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
 };
