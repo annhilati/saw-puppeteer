@@ -72,6 +72,9 @@ Done 🤙
 
 ## Sonstiges
 <details>
-  <summary>Technische Details</summary>
-  hier steht noch nix
+  <summary>Features</summary>
+  - [x] Kursauswahl
+  - [x] Automatische Buchung
+  - [ ] Auto-Login
+  - [ ] Automatische Sessions
 </details>
