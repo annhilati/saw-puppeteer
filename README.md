@@ -10,23 +10,23 @@
 2. **Füge die Kursnummern in die Liste am Anfang des Scripts ein.**<br>
    Es ist wichtig, dass die Liste richtig formatiert ist. Sie kann beispielsweise so aussehen:
    
-    ```js
-    const kursIDs = [5544, 7642, 8372, 8528, 8532, 8562, 8609];
-    ```
+   ```js
+   const kursIDs = [5544, 7642, 8372, 8528, 8532, 8562, 8609];
+   ```
 
-    Insgesammt muss das Script so aussehen:
-    ```js
-    // ⚙️ Hier Einstellungen vornehmen
+   Insgesammt muss das Script so aussehen:
+   ```js
+   // ⚙️ Hier Einstellungen vornehmen
    const kursIDs = [1001, 1002, 1003, 1004];
    const autoBook = false;
-   
+
 
    // ⚠️ ACHTUNG: Hier nichts verändern
    kursIDs.forEach(kursID => {
       Livewire.dispatch('addKurs', { kursID });
    });
-   if (window.location.pathname === '/coursebooking' && autoSend) {
-       window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
+   if (window.location.pathname === '/coursebooking' && autoBook) {
+      window.location.replace("https://sawware.benno.webstitut.de/coursebooking/book")
    };
     ```
 
