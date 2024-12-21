@@ -1,5 +1,6 @@
-const username = 'deinBenutzername';
-const password = 'deinPasswort';
+require('dotenv').config();
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 const kursIDs = [8372, 8621, 8615, 5544, 8532, 8528, 5493, 8620];
 const settings = {
     autoLogin: true,
@@ -15,6 +16,7 @@ const url = "https://sawware.benno.webstitut.de"
 
 const puppeteer = require('puppeteer');
 
+
 function log(message) {
     const timestamp = new Date().toTimeString().split(' ')[0];
     console.log(`[${timestamp}] ${message}`);
@@ -25,7 +27,11 @@ function log(message) {
 // ╰────────────────────────────────────────────────────────────────────────────────╯
 
 (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false, // Sichtbarer Modus
+        defaultViewport: null, // Verwendet die Standard-Browsergröße
+        args: ['--start-maximized'] // Startet maximiert
+    });
     log("Browser gestartet");
 
     const page = await browser.newPage();
@@ -34,36 +40,49 @@ function log(message) {
     await page.goto(`${url}/login`);
     log(url, "geladen");
 
-    // ╭────────────────────────────────────────────────────────╮
-    // │                         Login                          │
-    // ╰────────────────────────────────────────────────────────╯
+    // ╭──────────────────────────────────────────────────╮
+    // │                      Login                       │
+    // ╰──────────────────────────────────────────────────╯
 
     if (settings["autoLogin"]) {
+        await page.evaluate((username, password) => {
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            if (usernameInput && passwordInput) {
+                usernameInput.value = username;
+                passwordInput.value = password;
+                const submitButton = document.querySelector('button[type="submit"]');
+                if (submitButton) {
+                    submitButton.click();
+                }
+            } else {
+                console.error("Eingabefelder oder Submit-Button nicht gefunden!");
+            }
+        }, username, password);
 
-        document.getElementById('username').value = username;
-        document.getElementById('password').value = password;
+        await page.waitForNavigation(); // Warten, bis die Seite geladen ist
+        log("Login abgeschlossen");
+    }
 
-        // Auf den Submit-Button klicken
-        const submitButton = document.querySelector('button[type="submit"]');
-        if (submitButton) {
-            submitButton.click();
-        } else {
-            log('Submit-Button nicht gefunden!');
-    }};
+    // ╭──────────────────────────────────────────────────╮
+    // │                     Booking                      │
+    // ╰──────────────────────────────────────────────────╯
 
-    // ╭────────────────────────────────────────────────────────╮
-    // │                        Booking                         │
-    // ╰────────────────────────────────────────────────────────╯
+    if (settings["autoBook"]) {
+        await page.goto(`${url}/coursebooking`);
+        log("Kursbuchungsseite geladen");
 
-    if (settings["courseBooking"]) {
-        page.goto(`${url}/coursebooking`)
+        for (const kursID of kursIDs) {
+            await page.evaluate((kursID) => {
+                Livewire.dispatch('addKurs', { kursID });
+            }, kursID);
+            log(`Kurs mit ID ${kursID} hinzugefügt`);
+        }
 
-        kursIDs.forEach(kursID => {
-            Livewire.dispatch('addKurs', { kursID });
-        });
-
-        page.goto(`${url}/coursebooking/book`)
+        await page.goto(`${url}/coursebooking/book`);
+        log("Kurse gebucht");
     }
 
     await browser.close();
+    log("Browser geschlossen");
 })();
