@@ -1,23 +1,16 @@
-require('dotenv').config();
-console.log("Geladener Benutzername:", process.env.USERNAME);
-console.log("Geladenes Passwort:", process.env.PASSWORD);
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
 const kursIDs = [8372, 8621, 8615, 5544, 8532, 8528, 5493, 8620];
 const settings = {
     autoLogin: true,
     selectCourses: false,
-    autoBook: false
+    autoBook: false,
+    headless: false
 }
-
-const url = "https://sawware.benno.webstitut.de"
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
 // │                                     Meta                                       │
 // ╰────────────────────────────────────────────────────────────────────────────────╯
 
 const puppeteer = require('puppeteer');
-
 
 function log(message) {
     const timestamp = new Date().toTimeString().split(' ')[0];
@@ -28,9 +21,12 @@ function log(message) {
 // │                                     Main                                       │
 // ╰────────────────────────────────────────────────────────────────────────────────╯
 
+const url = "https://sawware.benno.webstitut.de"
+log("Skript gestartet");
+
 (async () => {
     const browser = await puppeteer.launch({
-        headless: false, // Sichtbarer Modus
+        headless: settings["headless"], // Sichtbarer Modus
         defaultViewport: null, // Verwendet die Standard-Browsergröße
         args: ['--start-maximized'] // Startet maximiert
     });
@@ -46,21 +42,23 @@ function log(message) {
     // │                      Login                       │
     // ╰──────────────────────────────────────────────────╯
 
+    require('dotenv').config();
+    const username = "Anton Berndt";
+    const password = process.env.PASSWORD;
+
     if (settings["autoLogin"]) {
+        await page.waitForNavigation();
         await page.evaluate((username, password) => {
             const usernameInput = document.getElementById('username');
             const passwordInput = document.getElementById('password');
             if (usernameInput && passwordInput) {
                 usernameInput.value = username;
                 passwordInput.value = password;
-                const submitButton = document.querySelector('button[type="submit"]');
-                if (submitButton) {
-                    submitButton.click();
-                }
             } else {
-                console.error("Eingabefelder oder Submit-Button nicht gefunden!");
+                console.error("Eingabefelder nicht gefunden!");
             }
         }, username, password);
+        await page.click('button[type="submit"]');
 
         await page.waitForNavigation(); // Warten, bis die Seite geladen ist
         log("Login abgeschlossen");
