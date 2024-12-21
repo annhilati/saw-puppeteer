@@ -36,7 +36,7 @@ log("Skript gestartet");
     log("Tab geöffnet");
 
     await page.goto(`${url}/login`);
-    log(url, "geladen");
+    log(`${url} geladen`);
 
     // ╭──────────────────────────────────────────────────╮
     // │                      Login                       │
@@ -47,18 +47,18 @@ log("Skript gestartet");
     const password = process.env.PASSWORD;
 
     if (settings["autoLogin"]) {
-        await page.waitForNavigation();
-        await page.evaluate((username, password) => {
-            const usernameInput = document.getElementById('username');
-            const passwordInput = document.getElementById('password');
-            if (usernameInput && passwordInput) {
-                usernameInput.value = username;
-                passwordInput.value = password;
+        await page.type('#username', username);  // Das Feld mit der ID "name"
+        await page.type('#password', password);
+        await page.evaluate(() => {
+            const form = document.querySelector('form[wire\\:submit="login"]');
+            if (form) {
+                form.
+                form.submit();
             } else {
-                console.error("Eingabefelder nicht gefunden!");
+                console.error("Formular nicht gefunden!");
             }
-        }, username, password);
-        await page.click('button[type="submit"]');
+        });
+        
 
         await page.waitForNavigation(); // Warten, bis die Seite geladen ist
         log("Login abgeschlossen");
@@ -83,6 +83,6 @@ log("Skript gestartet");
         log("Kurse gebucht");
     }
 
-    await browser.close();
+    // await browser.close();
     log("Browser geschlossen");
 })();
