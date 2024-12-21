@@ -49,19 +49,21 @@ log("Skript gestartet");
     if (settings["autoLogin"]) {
         await page.type('#username', username);  // Das Feld mit der ID "name"
         await page.type('#password', password);
+        await page.waitForSelector('form[wire\\:submit="login"]', { timeout: 5000 });
         await page.evaluate(() => {
             const form = document.querySelector('form[wire\\:submit="login"]');
             if (form) {
                 form.
                 form.submit();
             } else {
-                console.error("Formular nicht gefunden!");
+                log("Formular nicht gefunden!");
             }
         });
         
 
         await page.waitForNavigation(); // Warten, bis die Seite geladen ist
         log("Login abgeschlossen");
+        log(`Weitergeleitet zu ${await page.url()}`);
     }
 
     // ╭──────────────────────────────────────────────────╮
