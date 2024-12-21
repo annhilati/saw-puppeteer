@@ -1,4 +1,6 @@
 require('dotenv').config();
+console.log("Geladener Benutzername:", process.env.USERNAME);
+console.log("Geladenes Passwort:", process.env.PASSWORD);
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 const kursIDs = [8372, 8621, 8615, 5544, 8532, 8528, 5493, 8620];
