@@ -30,13 +30,13 @@ log("Skript gestartet");
         defaultViewport: null, // Verwendet die Standard-Browsergröße
         args: ['--start-maximized'] // Startet maximiert
     });
-    log("Browser gestartet");
+    log("[INFO] Browser gestartet");
 
     const tab = await browser.newPage();
-    log("Tab geöffnet");
+    log("[INFO] Neuer Tab geöffnet");
 
     await tab.goto(`${url}/login`);
-    log(`${url} geladen`);
+    log(`[INFO] URL geändert und Seite geladen: ${url}/login`);
 
     // ╭──────────────────────────────────────────────────╮
     // │                      Login                       │
@@ -47,11 +47,12 @@ log("Skript gestartet");
     const password = process.env.PASSWORD;
 
     if (settings["autoLogin"]) {
+        log("[INFO] Login begonnen")
         await tab.type('#username', username);
         await tab.type('#password', password);
         await tab.waitForSelector('button[type="submit"]', { visible: true });
         await tab.click('button[type="submit"]');
-        log("Button wurde geklickt");
+        log("[INFO] Anmeldedaten eingetragen und angemeldet");
 
         // await tab.evaluate(() => {
         //     const form = document.querySelector('form[wire\\:submit="login"]');
@@ -65,10 +66,12 @@ log("Skript gestartet");
         
         try {
             await tab.waitForFunction(
-                () => window.location.href !== 'https://example.com/login', 
+                () => window.location.href !== `${url}/login`, 
                 { timeout: 30000 } // Timeout nach 10 Sekunden
             );
-            log("URL hat sich geändert:", await tab.url());
+            log(`URL hat sich geändert:, ${await tab.url()}`);
+            await tab.waitForNavigation();
+            log(`Seite geladen: ${await tab.url()}`)
 
         } catch (error) {
             log("Seite wurde nach 30 Sekunden nicht weitergeleitet")
