@@ -55,15 +55,13 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         log("[LOGIN]   [INFO] Anmeldedaten eingetragen und abgesendet");
 
         try {
-            await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 30000 });
-            log(`[LOGIN]   [INFO] Angemeldet und Seite geladen: ${await tab.url()}`);
+            await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 30000 }); // Wartet auf den Logout-Button
+            log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${await tab.url()}`);
 
         } catch (error) {
             log("[LOGIN]   [FATAL] Seite wurde nach 30 Sekunden nicht weitergeleitet");
             process.exit();
         }
-        
-        
     }
 
     // ╭──────────────────────────────────────────────────╮
@@ -72,23 +70,26 @@ log("[SCRIPT]  [INFO] Skript gestartet");
 
     if (settings["autoBook"]) {
         await tab.goto(`${url}/coursebooking`);
-        log("Kursbuchungsseite geladen");
+        log("[BOOK]   [INFO] Kursbuchungsseite geladen");
 
         for (const kursID of kursIDs) {
             await tab.evaluate((kursID) => {
                 Livewire.dispatch('addKurs', { kursID });
             }, kursID);
-            log(`Kurs mit ID ${kursID} hinzugefügt`);
+            log(`[BOOK]   [INFO] Kurs mit ID ${kursID} hinzugefügt`);
         }
 
         await tab.goto(`${url}/coursebooking/book`);
-        log("Kurse gebucht");
+        log("[BOOK]   [INFO] Seite geladen:", await tab.url());
     }
 
+    // ╭──────────────────────────────────────────────────╮
+    // │                       Ende                       │
+    // ╰──────────────────────────────────────────────────╯
 
     log("[SCRIPT]  [INFO] Skript ordnungsgemäß ausgeführt")
     if (!settings["headless"]) {
-        log("[BROWSER] [INFO] Schließe das Browserfenster, um das Skript zu beenden")
+        log("[SCRIPT]  [INFO] Schließe das Browserfenster, um das Skript zu beenden")
     } else {
         browser.close()
     }
