@@ -93,4 +93,5 @@ log("[SCRIPT]  [INFO] Skript gestartet");
     } else {
         browser.close()
     }
+    
 })();
