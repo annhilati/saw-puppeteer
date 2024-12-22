@@ -32,10 +32,10 @@ log("Skript gestartet");
     });
     log("Browser gestartet");
 
-    const page = await browser.newPage();
+    const tab = await browser.newPage();
     log("Tab geöffnet");
 
-    await page.goto(`${url}/login`);
+    await tab.goto(`${url}/login`);
     log(`${url} geladen`);
 
     // ╭──────────────────────────────────────────────────╮
@@ -47,23 +47,34 @@ log("Skript gestartet");
     const password = process.env.PASSWORD;
 
     if (settings["autoLogin"]) {
-        await page.type('#username', username);  // Das Feld mit der ID "name"
-        await page.type('#password', password);
-        await page.waitForSelector('form[wire\\:submit="login"]', { timeout: 5000 });
-        await page.evaluate(() => {
-            const form = document.querySelector('form[wire\\:submit="login"]');
-            if (form) {
-                form.
-                form.submit();
-            } else {
-                log("Formular nicht gefunden!");
-            }
-        });
-        
+        await tab.type('#username', username);
+        await tab.type('#password', password);
+        await tab.waitForSelector('button[type="submit"]', { visible: true });
+        await tab.click('button[type="submit"]');
+        log("Button wurde geklickt");
 
-        await page.waitForNavigation(); // Warten, bis die Seite geladen ist
-        log("Login abgeschlossen");
-        log(`Weitergeleitet zu ${await page.url()}`);
+        // await tab.evaluate(() => {
+        //     const form = document.querySelector('form[wire\\:submit="login"]');
+        //     if (form) {
+        //         form.
+        //         form.submit();
+        //     } else {
+        //         log("Formular nicht gefunden!");
+        //     }
+        // });
+        
+        try {
+            await tab.waitForFunction(
+                () => window.location.href !== 'https://example.com/login', 
+                { timeout: 30000 } // Timeout nach 10 Sekunden
+            );
+            log("URL hat sich geändert:", await tab.url());
+
+        } catch (error) {
+            log("Seite wurde nach 30 Sekunden nicht weitergeleitet")
+        }
+        
+        
     }
 
     // ╭──────────────────────────────────────────────────╮
@@ -71,20 +82,25 @@ log("Skript gestartet");
     // ╰──────────────────────────────────────────────────╯
 
     if (settings["autoBook"]) {
-        await page.goto(`${url}/coursebooking`);
+        await tab.goto(`${url}/coursebooking`);
         log("Kursbuchungsseite geladen");
 
         for (const kursID of kursIDs) {
-            await page.evaluate((kursID) => {
+            await tab.evaluate((kursID) => {
                 Livewire.dispatch('addKurs', { kursID });
             }, kursID);
             log(`Kurs mit ID ${kursID} hinzugefügt`);
         }
 
-        await page.goto(`${url}/coursebooking/book`);
+        await tab.goto(`${url}/coursebooking/book`);
         log("Kurse gebucht");
     }
 
-    // await browser.close();
-    log("Browser geschlossen");
+
+    log("Skript ordnungsgemäß ausgeführt")
+    if (!settings["headless"]) {
+        log("Schließe das Browserfenster, um das Skript zu beenden")
+    } else {
+        browser.close()
+    }
 })();
