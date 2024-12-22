@@ -22,7 +22,7 @@ function log(message) {
 // ╰────────────────────────────────────────────────────────────────────────────────╯
 
 const url = "https://sawware.benno.webstitut.de"
-log("Skript gestartet");
+log("[SCRIPT]  [INFO] Skript gestartet");
 
 (async () => {
     const browser = await puppeteer.launch({
@@ -30,13 +30,13 @@ log("Skript gestartet");
         defaultViewport: null, // Verwendet die Standard-Browsergröße
         args: ['--start-maximized'] // Startet maximiert
     });
-    log("[INFO] Browser gestartet");
+    log("[BROWSER] [INFO] Browser gestartet");
 
     const tab = await browser.newPage();
-    log("[INFO] Neuer Tab geöffnet");
+    log("[BROWSER] [INFO] Neuer Tab geöffnet");
 
     await tab.goto(`${url}/login`);
-    log(`[INFO] URL geändert und Seite geladen: ${url}/login`);
+    log(`[BROWSER] [INFO] URL geändert und Seite geladen: ${url}/login`);
 
     // ╭──────────────────────────────────────────────────╮
     // │                      Login                       │
@@ -47,34 +47,20 @@ log("Skript gestartet");
     const password = process.env.PASSWORD;
 
     if (settings["autoLogin"]) {
-        log("[INFO] Login begonnen")
+        log("[SCRIPT]  [INFO] Login begonnen")
         await tab.type('#username', username);
         await tab.type('#password', password);
         await tab.waitForSelector('button[type="submit"]', { visible: true });
         await tab.click('button[type="submit"]');
-        log("[INFO] Anmeldedaten eingetragen und angemeldet");
+        log("[LOGIN]   [INFO] Anmeldedaten eingetragen und abgesendet");
 
-        // await tab.evaluate(() => {
-        //     const form = document.querySelector('form[wire\\:submit="login"]');
-        //     if (form) {
-        //         form.
-        //         form.submit();
-        //     } else {
-        //         log("Formular nicht gefunden!");
-        //     }
-        // });
-        
         try {
-            await tab.waitForFunction(
-                () => window.location.href !== `${url}/login`, 
-                { timeout: 30000 } // Timeout nach 10 Sekunden
-            );
-            log(`URL hat sich geändert:, ${await tab.url()}`);
-            await tab.waitForNavigation();
-            log(`Seite geladen: ${await tab.url()}`)
+            await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 30000 });
+            log(`[LOGIN]   [INFO] Angemeldet und Seite geladen: ${await tab.url()}`);
 
         } catch (error) {
-            log("Seite wurde nach 30 Sekunden nicht weitergeleitet")
+            log("[LOGIN]   [FATAL] Seite wurde nach 30 Sekunden nicht weitergeleitet");
+            process.exit();
         }
         
         
@@ -100,9 +86,9 @@ log("Skript gestartet");
     }
 
 
-    log("Skript ordnungsgemäß ausgeführt")
+    log("[SCRIPT]  [INFO] Skript ordnungsgemäß ausgeführt")
     if (!settings["headless"]) {
-        log("Schließe das Browserfenster, um das Skript zu beenden")
+        log("[BROWSER] [INFO] Schließe das Browserfenster, um das Skript zu beenden")
     } else {
         browser.close()
     }
