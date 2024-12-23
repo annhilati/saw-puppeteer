@@ -3,7 +3,7 @@ const settings = {
     autoLogin: true,
     selectCourses: false,
     autoBook: false,
-    headless: false
+    headless: true
 }
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer');
 function log(message) {
     const timestamp = new Date().toTimeString().split(' ')[0];
     console.log(`[${timestamp}] ${message}`);
-  }
+}
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
 // │                                     Main                                       │
