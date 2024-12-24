@@ -54,14 +54,24 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         await tab.click('button[type="submit"]');
         log("[LOGIN]   [INFO] Anmeldedaten eingetragen und abgesendet");
 
-        try {
-            await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 30000 }); // Wartet auf den Logout-Button
-            log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${await tab.url()}`);
+        let attempt = 0;
+        const maxAttempts = 6; // 30 Sekunden bei 5 Sekunden Intervall
 
-        } catch (error) {
-            log("[LOGIN]   [FATAL] Seite wurde nach 30 Sekunden nicht weitergeleitet");
-            process.exit();
+        while (attempt < maxAttempts) {
+            try {
+                await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 5000 }); // 5 Sekunden warten
+                log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${await tab.url()}`);
+                break; // Schleife beenden, wenn der Selector gefunden wurde
+            } catch (error) {
+                attempt++;
+                log(`[LOGIN]   [RETRY] Versuch ${attempt} von ${maxAttempts}, Logout-Button nicht gefunden.`);
+                if (attempt >= maxAttempts) {
+                    log("[LOGIN]   [FATAL] Seite wurde nach 30 Sekunden nicht weitergeleitet");
+                    process.exit();
+                }
+            }
         }
+
     }
 
     // ╭──────────────────────────────────────────────────╮
