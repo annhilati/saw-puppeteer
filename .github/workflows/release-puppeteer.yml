@@ -1,4 +1,4 @@
-name: Release Puppeteer
+name: SAW-Puppeteer-Release erstellen
 
 on:
   workflow_dispatch: # Manuelle Auslösung
@@ -12,51 +12,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout des Codes
-      - name: Checkout repository
+
+      - name: Checkout
         uses: actions/checkout@v3
 
-      # Node.js einrichten
-      - name: Setup Node.js
+      - name: Node.js Setup
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Version von Node.js
+          node-version: '18'
 
-      # Abhängigkeiten installieren
-      - name: Install dependencies
-        run: npm install
+      - name: Abhängigkeiten installieren
+        run: npm install # installiert, was in der package.json gelistet ist
 
-      - name: Get version from package.json
+      - name: Release-Version spezifizieren
         id: get_version
         run: |
           VERSION=$(node -p "require('./package.json').version")
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           
-      # Erstelle die .exe mit pkg
-      - name: Build EXE
-        run: npx pkg . --targets node18-win-x64 --output saw-puppeteer.exe
+      - name: Code zu Executable bündeln
+        run: npx pkg . --config puppeteer.json --targets node18-win-x64 --output saw-puppeteer.exe
 
-      # Artefakte hochladen (optional)
-      - name: Upload EXE artifact
+      - name: Executable als Artefakt hochladen
         uses: actions/upload-artifact@v3
         with:
           name: saw-puppeteer
           path: saw-puppeteer.exe
 
       # Release erstellen
-      - name: Create Release
+      - name: Release erstellen
         id: create_release
         uses: actions/create-release@v1
         with:
           tag_name: "v${{ env.VERSION }}"
-          release_name: "Release v${{ env.VERSION }}"
+          release_name: "Puppeteer v${{ env.VERSION }}"
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Release-Asset hochladen
-      - name: Upload EXE to Release
+      - name: Executable dem Release hinzufügen
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
