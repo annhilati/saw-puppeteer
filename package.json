@@ -1,0 +1,24 @@
+{
+    "name": "saw-puppeteer",
+    "version": "0.0.0",
+    "description": "Skript zur Automatisierung der SAW-Kurswahl",
+    "main": "puppeteer.js",
+    "scripts": {
+      "start": "node puppeteer.js"
+    },
+    "bin": "puppeteer.js",
+    "dependencies": {
+      "puppeteer": "^21.0.0"
+    },
+    "pkg": {
+      "assets": [
+        "node_modules/puppeteer/.local-chromium/**/*"
+      ],
+      "targets": [
+        "node18-win-x64"
+      ]
+    },
+    "author": "Annhilati",
+    "license": "ARR"
+  }
+  
