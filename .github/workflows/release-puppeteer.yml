@@ -1,0 +1,48 @@
+name: Release Puppeteer
+
+on:
+  workflow_dispatch: # Manuelle Auslösung
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout des Codes
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Node.js einrichten
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Version von Node.js
+
+      # Abhängigkeiten installieren
+      - name: Install dependencies
+        run: npm install
+
+      # Version aus der package.json extrahieren
+      - name: Get version from package.json
+        id: get_version
+        run: echo "version=$(node -p \"require('./package.json').version\")" >> $GITHUB_ENV
+
+      # Erstelle die .exe mit pkg
+      - name: Build EXE
+        run: npx pkg . --targets node18-win-x64 --output saw-puppeteer.exe
+
+      # Artefakte hochladen (optional)
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: saw-puppeteer
+          path: saw-puppeteer.exe
+
+      # Release erstellen und .exe anhängen
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "v${{ env.version }}"
+          release_name: "Release v${{ env.version }}"
+          generate_release_notes: true
+          files: saw-puppeteer.exe
