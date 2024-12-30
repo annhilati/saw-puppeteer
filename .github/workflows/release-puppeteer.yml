@@ -22,7 +22,7 @@ jobs:
           node-version: '18'
 
       - name: Abhängigkeiten installieren
-        run: npm install --config puppeteer.json # installiert, was in der package.json gelistet ist
+        run: npm install --package-lock-only --prefix . puppeteer.json  # installiert, was in der package.json gelistet ist
 
       - name: Release-Version spezifizieren
         id: get_version
