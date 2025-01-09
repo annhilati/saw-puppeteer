@@ -18,6 +18,23 @@ function log(message) {
 }
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
+// │                                     Input                                      │
+// ╰────────────────────────────────────────────────────────────────────────────────╯
+
+// const readline = require('readline');
+
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+// });
+
+// rl.question('Bitte gib die Kurse, die gewählt werden sollen an. Verwende Leerzeichen zur Trennung ', (kursIDsInput) => {
+//     rl.close();
+// });
+
+// const kursIDs = kursIDsInput.split(" ")
+
+// ╭────────────────────────────────────────────────────────────────────────────────╮
 // │                                     Main                                       │
 // ╰────────────────────────────────────────────────────────────────────────────────╯
 
