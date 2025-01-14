@@ -30,8 +30,10 @@ jobs:
       - name: Release-Version spezifizieren
         id: get_version
         run: |
+          mv puppeteer.json package.json
           VERSION=$(node -p "require('./package.json').version")
           echo "VERSION=$VERSION" >> $GITHUB_ENV
+          mv package.json puppeteer.json
           
       - name: Code zu Executable bündeln
         run: npx pkg . --config puppeteer.json --targets node18-win-x64 --output saw-puppeteer.exe
