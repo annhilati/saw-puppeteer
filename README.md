@@ -3,6 +3,10 @@
 > [!IMPORTANT]
 > Wenn du keine oder nur wenig Erfahrung mit der Verwendung von Computern oder Webdevelopment hast, lies zunächst die gesammte Anleitung. <br>
 > Die Anleitung geht außerdem davon aus, dass du kein Steinzeitmensch bist und zumindest Text kopieren (Strg+C), einfügen (Strg+V) und zwischenspeichern (zum Beispiel in Windows' "Editor" Programm) kannst.
+> [!IMPORTANT]
+> Wenn du auf dem iPad unterwegs bist, lies dennoch erst die gesammte Anleitung um zu verstehen, was hier erreicht werden soll.
+<br>
+> Folge dann den Schritten der Anleitung für iPads.
 
 ## Tutorial für Anfänger
 ### Vorbereitung
@@ -58,10 +62,9 @@ Done 🤙
 3. Starte die Erweiterung durch tippen auf das blaue i-symbol in der Suchleiste.
   <img width="1180" alt="Bild" src="https://github.com/user-attachments/assets/b2c830b8-7f0c-42bd-8b0c-cbf25565c3a9">
 
-
 4. Wechsle zum Tab 'Console'
 
-5. Füge das Skript wie in der normalen Anleitung ein.
+5. Füge das Skript wie in der normalen Anleitung beschrieben ein.
 
 6. Drücke auf den 'Execute'-Button rechts.
 
@@ -73,6 +76,7 @@ Done 🤙
 ## Sonstiges
 <details>
   <summary>Features</summary>
+  
   - [x] Kursauswahl
   - [x] Automatische Buchung
   - [ ] Auto-Login

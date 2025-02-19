@@ -81,7 +81,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
                 break; // Schleife beenden, wenn der Selector gefunden wurde
             } catch (error) {
                 attempt++;
-                log(`[LOGIN]   [RETRY] Versuch ${attempt} von ${maxAttempts}, Logout-Button nicht gefunden.`);
+                log(`[LOGIN]   [RETRY] Versuch ${attempt} von ${maxAttempts} gescheitert.`);
                 if (attempt >= maxAttempts) {
                     log("[LOGIN]   [FATAL] Seite wurde nach 30 Sekunden nicht weitergeleitet");
                     process.exit();
