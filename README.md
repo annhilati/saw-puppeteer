@@ -36,14 +36,12 @@
 
 3. **Öffne im Browser die Entwicklerwerkzeuge**<br>
    Das machst du beispielsweise, indem du auf der SAWWare-Seite irgendwo rechtsklickst und "Element untersuchen" o.ä. wählst. In den "Dev-Tools", die sich jetzt - meistens am rechten Bildschirmrand - geöffnet haben, bist du nun im "Elemente"/"Elements"-Tab gelandet.<br>
-5. **Wechsle zum "Konsole"/"Console"-Tab**<br>
+4. **Wechsle zum "Konsole"/"Console"-Tab**<br>
    ![image](https://github.com/user-attachments/assets/6422feff-222f-4fd2-ac30-1e8c78879cdc)
-6. **Ggf. Konsole authorisieren**<br>
-   Es kann sein, dass du als Sicherheitsfreigabe etwas bestimmtes in die Konsole schreiben musst. Das wird dort angezeigt und kann beispielsweise "Eingabe erlauben" heißen.
-7. **Klärung der Daten**<br>
-   Melde dich von der SAWWare-Seite ab.
-
-    Warte anschließend auf den Beginn der Wahl und lass die Konsole geöffnet
+5. **Ggf. Konsole authorisieren**<br>
+   Es kann sein, dass du als Sicherheitsfreigabe etwas bestimmtes in die Konsole schreiben musst. Das wird dort angezeigt und kann beispielsweise "Eingabe erlauben" lauten.
+6. **Auf die Wahl warten**<br>
+   Warte auf die Wahl und lasse die Konsole währenddessen am besten geöffnet. Du kannst den Code auch schon einfügen, nur abschicken bringt eben noch nichts. (Siehe Schritt 8)
 
 ### Wenn die Wahl begonnen hat
 7. **Lade die SAWWare-Seite neu und melde dich wenn nötig an, öffne die Kurswahlansicht**
@@ -76,7 +74,7 @@ Done 🤙
 ## Sonstiges
 <details>
   <summary>Features</summary>
-  
+
   - [x] Kursauswahl
   - [x] Automatische Buchung
   - [ ] Auto-Login
