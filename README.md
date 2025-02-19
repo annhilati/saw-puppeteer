@@ -4,8 +4,12 @@
 > Wenn du keine oder nur wenig Erfahrung mit der Verwendung von Computern oder Webdevelopment hast, lies zunächst die gesammte Anleitung. <br>
 > Die Anleitung geht außerdem davon aus, dass du kein Steinzeitmensch bist und zumindest Text kopieren (Strg+C), einfügen (Strg+V) und zwischenspeichern (zum Beispiel in Windows' "Editor" Programm) kannst.
 
-> [!IMPORTANT] iPads
+> [!IMPORTANT]
 > Wenn du auf dem iPad unterwegs bist, lies dennoch erst die gesammte Anleitung um zu verstehen, was hier erreicht werden soll. <br>Folge dann den Schritten der Anleitung für iPads.
+
+> [!IMPORTANT]
+> Da der Kiwi-Browser nicht mehr weiterentiwckelt wird, gibt für Android-Geräte aktuell keine einfache Möglichkeit der Ausführung dieses Codes.
+> ~~Wenn du auf einem Android-Tablet unterwegs bist, installiere die Kiwi-Browser App. Du kannst sie wie den Browser eines Computers benutzen. Die Konsole findest du im 3-Punkte-Menü oben rechts.~~
 
 ## Tutorial für Anfänger
 ### Vorbereitung
