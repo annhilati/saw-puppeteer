@@ -4,7 +4,7 @@
 > Wenn du keine oder nur wenig Erfahrung mit der Verwendung von Computern oder Webdevelopment hast, lies zunächst die gesammte Anleitung. <br>
 > Die Anleitung geht außerdem davon aus, dass du kein Steinzeitmensch bist und zumindest Text kopieren (Strg+C), einfügen (Strg+V) und zwischenspeichern (zum Beispiel in Windows' "Editor" Programm) kannst.
 
-> [!IMPORTANT]
+> [!IMPORTANT] iPads
 > Wenn du auf dem iPad unterwegs bist, lies dennoch erst die gesammte Anleitung um zu verstehen, was hier erreicht werden soll. <br>Folge dann den Schritten der Anleitung für iPads.
 
 ## Tutorial für Anfänger
@@ -52,7 +52,7 @@
 Done 🤙
 
 ## Anleitung für Safari auf dem Tablet
-1. Installiere die App ["Web Inspector"](https://apps.apple.com/de/app/web-inspector/id1584825745) auf deinem iPad.
+1. Installiere die [Web Inspector](https://apps.apple.com/de/app/web-inspector/id1584825745) App auf deinem iPad.
 
 2. Befolge die Anweisungen in der App, um die Erweiterung für Safari zu installieren.
 
