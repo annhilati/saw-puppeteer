@@ -8,7 +8,7 @@
 > Wenn du auf dem iPad unterwegs bist, lies dennoch erst die gesammte Anleitung um zu verstehen, was hier erreicht werden soll. <br>Folge dann den Schritten der Anleitung für iPads.
 
 > [!IMPORTANT]
-> Da der Kiwi-Browser nicht mehr weiterentiwckelt wird, gibt für Android-Geräte aktuell keine einfache Möglichkeit der Ausführung dieses Codes.
+> Da der Kiwi-Browser nicht mehr weiterentwickelt wird, gibt für Android-Geräte aktuell keine einfache Möglichkeit der Ausführung dieses Codes. <br>
 > ~~Wenn du auf einem Android-Tablet unterwegs bist, installiere die Kiwi-Browser App. Du kannst sie wie den Browser eines Computers benutzen. Die Konsole findest du im 3-Punkte-Menü oben rechts.~~
 
 ## Tutorial für Anfänger
@@ -55,15 +55,15 @@
 
 Done 🤙
 
-## Anleitung für Safari auf dem Tablet
+## Konsole für Safari auf dem iPad
 1. Installiere die [Web Inspector](https://apps.apple.com/de/app/web-inspector/id1584825745) App auf deinem iPad.
 
 2. Befolge die Anweisungen in der App, um die Erweiterung für Safari zu installieren.
 
-3. Starte die Erweiterung durch tippen auf das blaue i-symbol in der Suchleiste.
+3. Starte die Erweiterung durch tippen auf das blaue Infosymbol (bzw das Puzzelteil) in der Suchleiste.
   <img width="1180" alt="Bild" src="https://github.com/user-attachments/assets/b2c830b8-7f0c-42bd-8b0c-cbf25565c3a9">
 
-4. Wechsle zum Tab 'Console'
+4. Wechsle zum Tab 'Console'.
 
 5. Füge das Skript wie in der normalen Anleitung beschrieben ein.
 
