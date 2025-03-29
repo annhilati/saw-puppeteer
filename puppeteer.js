@@ -3,7 +3,7 @@ const settings = {
     autoLogin: true,
     selectCourses: false,
     autoBook: false,
-    headless: true
+    headless: false
 }
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
@@ -68,14 +68,15 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         await tab.type('#username', username);
         await tab.type('#password', password);
         await tab.waitForSelector('button[type="submit"]', { visible: true });
-        await tab.click('button[type="submit"]');
-        log("[LOGIN]   [INFO] Anmeldedaten eingetragen und abgesendet");
+        log("[LOGIN]   [INFO] Anmeldedaten eingetragen");
 
         let attempt = 0;
         const maxAttempts = 6; // 30 Sekunden bei 5 Sekunden Intervall
 
         while (attempt < maxAttempts) {
             try {
+                await tab.click('button[type="submit"]');
+                log("[LOGIN]   [INFO] Anmeldedaten abgesendet");
                 await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 5000 }); // 5 Sekunden warten
                 log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${await tab.url()}`);
                 break; // Schleife beenden, wenn der Selector gefunden wurde
