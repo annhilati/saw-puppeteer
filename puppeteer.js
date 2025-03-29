@@ -77,14 +77,14 @@ log("[SCRIPT]  [INFO] Skript gestartet");
             try {
                 await tab.click('button[type="submit"]');
                 log("[LOGIN]   [INFO] Anmeldedaten abgesendet");
-                await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 5000 }); // 5 Sekunden warten
+                await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 10001 }); // etwas mehr als 10 Sekunden warten
                 log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${await tab.url()}`);
                 break; // Schleife beenden, wenn der Selector gefunden wurde
             } catch (error) {
                 attempt++;
                 log(`[LOGIN]   [RETRY] Versuch ${attempt} von ${maxAttempts} gescheitert.`);
                 if (attempt >= maxAttempts) {
-                    log("[LOGIN]   [FATAL] Seite wurde nach 30 Sekunden nicht weitergeleitet");
+                    log(`[LOGIN]   [FATAL] Seite wurde nach ${maxAttempts} Veruschen nicht weitergeleitet`);
                     process.exit();
                 }
             }
