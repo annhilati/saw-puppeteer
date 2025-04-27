@@ -60,7 +60,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
     // ╰──────────────────────────────────────────────────╯
 
     require('dotenv').config();
-    const username = "Anton Berndt";
+    const username = process.env.USERNAME;
     const password = process.env.PASSWORD;
 
     if (settings["autoLogin"]) {
@@ -78,7 +78,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
                 await tab.click('button[type="submit"]');
                 log("[LOGIN]   [INFO] Anmeldedaten abgesendet");
                 await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 10001 }); // etwas mehr als 10 Sekunden warten
-                log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${await tab.url()}`);
+                log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${tab.url()}`);
                 break; // Schleife beenden, wenn der Selector gefunden wurde
             } catch (error) {
                 attempt++;
@@ -95,7 +95,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
     // │                     Booking                      │
     // ╰──────────────────────────────────────────────────╯
 
-    if (settings["autoBook"]) {
+    if (settings["selectCourses"]) {
         await tab.goto(`${url}/coursebooking`);
         log("[BOOK]   [INFO] Kursbuchungsseite geladen");
 
@@ -112,9 +112,10 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         //         log(`[BOOK]   [INFO] Kurs mit ID ${kursID} hinzugefügt`);
         //     });
         // }, kursIDs);
-
+    }
+    if (settings["autoBook"] || settings["headless"]) {
         await tab.goto(`${url}/coursebooking/book`);
-        log("[BOOK]   [INFO] Seite geladen:", await tab.url());
+        log("[BOOK]   [INFO] Seite geladen:", tab.url());
     }
 
     // ╭──────────────────────────────────────────────────╮
