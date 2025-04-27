@@ -89,7 +89,6 @@ log("[SCRIPT]  [INFO] Skript gestartet");
                 }
             }
         }
-
     }
 
     // ╭──────────────────────────────────────────────────╮
@@ -106,6 +105,13 @@ log("[SCRIPT]  [INFO] Skript gestartet");
             }, kursID);
             log(`[BOOK]   [INFO] Kurs mit ID ${kursID} hinzugefügt`);
         }
+        // Alternative Variante, die nur eine Evaluation nutzt
+        // await tab.evaluate((kursIDs) => {
+        //     kursIDs.forEach(kursID => {
+        //         Livewire.dispatch('addKurs', { kursID });
+        //         log(`[BOOK]   [INFO] Kurs mit ID ${kursID} hinzugefügt`);
+        //     });
+        // }, kursIDs);
 
         await tab.goto(`${url}/coursebooking/book`);
         log("[BOOK]   [INFO] Seite geladen:", await tab.url());
