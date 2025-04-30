@@ -1,7 +1,7 @@
-const kursIDs = [8372, 8621, 8615, 5544, 8532, 8528, 5493, 8620];
+const kursIDs = [8740, 8771, 8732, 8809, 8806, 8615, 8742, 8898, 8886, 8741];
 const settings = {
     autoLogin: true,
-    selectCourses: false,
+    selectCourses: true,
     autoBook: false,
     headless: false
 }
@@ -17,22 +17,6 @@ function log(message) {
     console.log(`[${timestamp}] ${message}`);
 }
 
-// ╭────────────────────────────────────────────────────────────────────────────────╮
-// │                                     Input                                      │
-// ╰────────────────────────────────────────────────────────────────────────────────╯
-
-// const readline = require('readline');
-
-// const rl = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout,
-// });
-
-// rl.question('Bitte gib die Kurse, die gewählt werden sollen an. Verwende Leerzeichen zur Trennung ', (kursIDsInput) => {
-//     rl.close();
-// });
-
-// const kursIDs = kursIDsInput.split(" ")
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
 // │                                     Main                                       │
@@ -60,7 +44,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
     // ╰──────────────────────────────────────────────────╯
 
     require('dotenv').config();
-    const username = process.env.USERNAME;
+    const username = process.env.USER;
     const password = process.env.PASSWORD;
 
     if (settings["autoLogin"]) {
@@ -97,25 +81,35 @@ log("[SCRIPT]  [INFO] Skript gestartet");
 
     if (settings["selectCourses"]) {
         await tab.goto(`${url}/coursebooking`);
-        log("[BOOK]   [INFO] Kursbuchungsseite geladen");
 
-        for (const kursID of kursIDs) {
-            await tab.evaluate((kursID) => {
-                Livewire.dispatch('addKurs', { kursID });
-            }, kursID);
-            log(`[BOOK]   [INFO] Kurs mit ID ${kursID} hinzugefügt`);
+        log("[BOOK]    [INFO] Warte eine Sekunde um Weiterleitung abzuwarten");
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        if (new URL(tab.url()).pathname === "/dashboard") {
+            log("[BOOK]    [WARN] Nur Kursinformationen verfügbar");
+            await tab.goto(`${url}/courseinformations`);
+            log("[BOOK]    [INFO] Kursinformationsseite geladen");
+        } else {
+            log("[BOOK]    [INFO] Kursbuchungsseite geladen");
         }
-        // Alternative Variante, die nur eine Evaluation nutzt
-        // await tab.evaluate((kursIDs) => {
-        //     kursIDs.forEach(kursID => {
+
+        // for (const kursID of kursIDs) {
+        //     await tab.evaluate((kursID) => {
         //         Livewire.dispatch('addKurs', { kursID });
-        //         log(`[BOOK]   [INFO] Kurs mit ID ${kursID} hinzugefügt`);
-        //     });
-        // }, kursIDs);
+        //     }, kursID);
+        //     log(`[BOOK]    [INFO] Kurs mit ID ${kursID} hinzugefügt`);
+        // }
+        // Alternative Variante, die nur eine Evaluation nutzt
+        await tab.evaluate((kursIDs) => {
+            kursIDs.forEach(kursID => {
+                Livewire.dispatch('addKurs', { kursID });
+            });
+        }, kursIDs);
+        log(`[BOOK]    [INFO] Alle Kurse versucht hinzuzufügen`);
     }
     if (settings["autoBook"] || settings["headless"]) {
         await tab.goto(`${url}/coursebooking/book`);
-        log("[BOOK]   [INFO] Seite geladen:", tab.url());
+        log("[BOOK]    [INFO] Seite geladen:", tab.url());
     }
 
     // ╭──────────────────────────────────────────────────╮
