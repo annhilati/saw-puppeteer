@@ -1,4 +1,4 @@
-const kursIDs = [8740, 8771, 8732, 8809, 8806, 8615, 8742, 8898, 8886, 8741];
+const kursIDs = [8743, 5544, 8771, 8447, 8723, 8742, 8898, 8741];
 const settings = {
     autoLogin: true,
     selectCourses: true,
@@ -16,7 +16,6 @@ function log(message) {
     const timestamp = new Date().toTimeString().split(' ')[0];
     console.log(`[${timestamp}] ${message}`);
 }
-
 
 // ╭────────────────────────────────────────────────────────────────────────────────╮
 // │                                     Main                                       │
@@ -55,7 +54,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         log("[LOGIN]   [INFO] Anmeldedaten eingetragen");
 
         let attempt = 0;
-        const maxAttempts = 6; // 30 Sekunden bei 5 Sekunden Intervall
+        const maxAttempts = 60;
 
         while (attempt < maxAttempts) {
             try {
