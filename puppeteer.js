@@ -1,4 +1,4 @@
-const kursIDs = [8743, 5544, 8771, 8447, 8723, 8742, 8898, 8741];
+const kursIDs = [6671, 9018, 9045, 8808, 6686, 8560, 7771, 8969];
 const settings = {
     autoLogin: true,
     selectCourses: true,
