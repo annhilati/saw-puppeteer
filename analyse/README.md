@@ -33,5 +33,5 @@ Wenn keine gültige Session besteht, wird man zu `/login` weitergeleitet
 Pfad | Keine Kursansicht | Kursansicht | Kurswahl
 --- | ----------------- | ----------- | -----------
 courseinformations |  | - | 
-coursebooking |  |  |
+coursebooking |  | dashboard |
 coursebooking/book |  |  |

@@ -1,5 +1,5 @@
 // ⚙️ Hier Einstellungen vornehmen
-const kursIDs = [1001, 1002, 1003, 1004];
+const kursIDs = [6671, 9018, 9045, 8808, 6686, 8560, 7771, 8969];
 const autoBook = false;
 
 // ⚠️ ACHTUNG: Hier nichts verändern

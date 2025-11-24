@@ -26,11 +26,15 @@ log("[SCRIPT]  [INFO] Skript gestartet");
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: settings["headless"], // Sichtbarer Modus
-        defaultViewport: null, // Verwendet die Standard-Browsergröße
-        args: ['--start-maximized'] // Startet maximiert
+        headless: settings["headless"],
+        defaultViewport: null,
+        args: ['--start-maximized']
     });
     log("[BROWSER] [INFO] Browser gestartet");
+
+    // Show Off
+    // const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    // await sleep(10000)
 
     const tab = await browser.newPage();
     log("[BROWSER] [INFO] Neuer Tab geöffnet");
@@ -50,8 +54,9 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         log("[SCRIPT]  [INFO] Login begonnen")
         await tab.type('#username', username);
         await tab.type('#password', password);
-        await tab.waitForSelector('button[type="submit"]', { visible: true });
         log("[LOGIN]   [INFO] Anmeldedaten eingetragen");
+        await tab.waitForSelector('button[type="submit"]', { visible: true });
+        log("[LOGIN]   [INFO] Anmelde-Button sichtbar");
 
         let attempt = 0;
         const maxAttempts = 60;
@@ -59,7 +64,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         while (attempt < maxAttempts) {
             try {
                 await tab.click('button[type="submit"]');
-                log("[LOGIN]   [INFO] Anmeldedaten abgesendet");
+                log("[LOGIN]   [INFO] Anmeldedaten abgesendet (warte maximal 10 Sekunden auf Weiterleitung)");
                 await tab.waitForSelector('button[wire\\:click="logout"]', { timeout: 10001 }); // etwas mehr als 10 Sekunden warten
                 log(`[LOGIN]   [SUCCESS] Angemeldet und Seite geladen: ${tab.url()}`);
                 break; // Schleife beenden, wenn der Selector gefunden wurde
@@ -87,24 +92,17 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         if (new URL(tab.url()).pathname === "/dashboard") {
             log("[BOOK]    [WARN] Nur Kursinformationen verfügbar");
             await tab.goto(`${url}/courseinformations`);
-            log("[BOOK]    [INFO] Kursinformationsseite geladen");
+            log("[BOOK]    [SUCCESS] Kursinformationsseite geladen");
         } else {
-            log("[BOOK]    [INFO] Kursbuchungsseite geladen");
+            log("[BOOK]    [SUCCESS] Kursbuchungsseite geladen");
         }
 
-        // for (const kursID of kursIDs) {
-        //     await tab.evaluate((kursID) => {
-        //         Livewire.dispatch('addKurs', { kursID });
-        //     }, kursID);
-        //     log(`[BOOK]    [INFO] Kurs mit ID ${kursID} hinzugefügt`);
-        // }
-        // Alternative Variante, die nur eine Evaluation nutzt
         await tab.evaluate((kursIDs) => {
             kursIDs.forEach(kursID => {
                 Livewire.dispatch('addKurs', { kursID });
             });
         }, kursIDs);
-        log(`[BOOK]    [INFO] Alle Kurse versucht hinzuzufügen`);
+        log(`[BOOK]    [INFO] Alle Kurse versucht hinzuzufügen (Feedback erwarteter Maßen unbekannt)`);
     }
     if (settings["autoBook"] || settings["headless"]) {
         await tab.goto(`${url}/coursebooking/book`);
@@ -115,7 +113,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
     // │                       Ende                       │
     // ╰──────────────────────────────────────────────────╯
 
-    log("[SCRIPT]  [INFO] Skript ordnungsgemäß ausgeführt")
+    log("[SCRIPT]  [SUCCESS] Skript ordnungsgemäß ausgeführt")
     if (!settings["headless"]) {
         log("[SCRIPT]  [INFO] Schließe das Browserfenster, um das Skript zu beenden")
     } else {
