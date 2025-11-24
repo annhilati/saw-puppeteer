@@ -3,6 +3,7 @@ from datetime import datetime
 def log(component: str, type: str, message: str) -> None:
     timestamp = Time.clock()
     colors = {
+        "FAIL" :    "\033[38;2;200;80;80m",
         "ERROR":    "\033[38;2;200;80;80m",
         "FATAL":    "\033[38;2;200;80;80m",
         "WARN":     "\033[38;2;220;150;80m",

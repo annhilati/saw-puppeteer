@@ -57,7 +57,7 @@ async def main():
             await page.wait_for_selector('button[type="submit"]', state="visible")
             log("[LOGIN]   [INFO] Anmelde-Button sichtbar")
 
-            attempt = 0
+            attempt = 1
             maxAttempts = 60
 
             while attempt < maxAttempts:
@@ -70,24 +70,24 @@ async def main():
                     break
 
                 except Exception:
-                    attempt += 1
                     log(f"[LOGIN]   [RETRY] Versuch {attempt} von {maxAttempts} gescheitert.")
                     if attempt >= maxAttempts:
                         log("[LOGIN]   [FATAL] Seite wurde nach maximalen Versuchen nicht weitergeleitet")
                         return
+                    attempt += 1
 
         # ──────────────────────────────────────────────
         # Course Booking
         # ──────────────────────────────────────────────
 
         if settings["selectCourses"]:
-            await page.goto(f"{url}/coursebooking")
+            await page.goto(url + "/coursebooking")
             log("[BOOK]    [INFO] Warte eine Sekunde um Weiterleitung abzuwarten")
             await page.wait_for_timeout(1000)
 
             if page.url.endswith("/dashboard"):
                 log("[BOOK]    [WARN] Nur Kursinformationen verfügbar")
-                await page.goto(f"{url}/courseinformations")
+                await page.goto(url + "/courseinformations")
                 log("[BOOK]    [SUCCESS] Kursinformations-Seite geladen")
             else:
                 log("[BOOK]    [SUCCESS] Kursbuchungs-Seite geladen")
