@@ -40,7 +40,7 @@ log("[SCRIPT]  [INFO] Skript gestartet");
     log("[BROWSER] [INFO] Neuer Tab geöffnet");
 
     await tab.goto(`${url}/login`);
-    log(`[BROWSER] [INFO] URL geändert und Seite geladen: ${url}/login`);
+    log(`[BROWSER] [INFO] Login-Seite geladen`);
 
     // ╭──────────────────────────────────────────────────╮
     // │                      Login                       │
@@ -92,9 +92,9 @@ log("[SCRIPT]  [INFO] Skript gestartet");
         if (new URL(tab.url()).pathname === "/dashboard") {
             log("[BOOK]    [WARN] Nur Kursinformationen verfügbar");
             await tab.goto(`${url}/courseinformations`);
-            log("[BOOK]    [SUCCESS] Kursinformationsseite geladen");
+            log("[BOOK]    [SUCCESS] Kursinformations-Seite geladen");
         } else {
-            log("[BOOK]    [SUCCESS] Kursbuchungsseite geladen");
+            log("[BOOK]    [SUCCESS] Kursbuchungs-Seite geladen");
         }
 
         await tab.evaluate((kursIDs) => {
