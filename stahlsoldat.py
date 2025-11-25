@@ -59,25 +59,24 @@ async def main():
 
         # Seitenzustand testen
         await tab.goto(url + "/coursebooking")
-        log("BOOK", "INFO", "Warte eine Sekunde um eventuelle Weiterleitung abzuwarten")
+        info_only = False
+
         try:
             await tab.wait_for_url("**/dashboard", timeout=1000)
-            await tab.wait_for_load_state("load")
-        except:
-            pass
-
-        if tab.url.endswith("/dashboard"):
             log("BOOK", "WARN", "Nur Kursinformationen verfügbar")
+            
+            info_only = True
             await tab.goto(url + "/courseinformations")
-            log("BOOK", "SUCCESS", "Kursinformations-Seite geladen")
-        else:
+
+        except:
             log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
         # ──────────────────────────────────────────────
         # Abwarten
         # ──────────────────────────────────────────────
+
         s = 5
-        if not testlauf:
+        if not testlauf and not info_only:
             log("SKRIPT", "INFO", f"Warten, bis Sessions beendet werden (Refresh alle {s} Sekunden)")
             while not tab.url.endswith("login"):
                 try:
@@ -154,7 +153,7 @@ async def login(p: Page):
             await p.click('button[type="submit"]')
             log("LOGIN", "INFO", "Anmeldedaten abgesendet (warte maximal 10 Sekunden auf Weiterleitung)")
 
-            await p.wait_for_selector('button[wire\\:click="logout"]', timeout=10000)
+            await p.wait_for_url("**/dashboard", timeout=10000)
             log(f"LOGIN", "SUCCESS", f"Angemeldet und Seite geladen: {p.url}")
             break
 
