@@ -75,7 +75,7 @@ async def main():
         # Abwarten
         # ──────────────────────────────────────────────
 
-        s = 5
+        s = 10
         if not testlauf and not info_only:
             log("SKRIPT", "INFO", f"Warten, bis Sessions beendet werden (Refresh alle {s} Sekunden)")
             while not tab.url.endswith("login"):
@@ -86,21 +86,12 @@ async def main():
 
             log("SKRIPT", "INFO", f"Sessions wurden beendet")
             login(tab)
+            tab.goto(url + "/coursebooking")
+            log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
         # ──────────────────────────────────────────────
         # Course Booking
         # ──────────────────────────────────────────────
-
-        await tab.goto(url + "/coursebooking")
-        log("BOOK", "INFO", "Warte eine Sekunde um Weiterleitung abzuwarten")
-        await tab.wait_for_timeout(1000)
-
-        if tab.url.endswith("/dashboard"):
-            log("BOOK", "WARN", "Nur Kursinformationen verfügbar")
-            await tab.goto(url + "/courseinformations")
-            log("BOOK", "SUCCESS", "Kursinformations-Seite geladen")
-        else:
-            log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
         await tab.evaluate(
             """(kursIDs) => {
