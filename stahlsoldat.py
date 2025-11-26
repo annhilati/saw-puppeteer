@@ -1,5 +1,6 @@
 import asyncio
 import os, dotenv
+from datetime import datetime
 from fancyconsole import log
 from playwright.async_api import async_playwright, Page
 
@@ -25,6 +26,8 @@ url = "https://sawware.benno.webstitut.de"
 
 async def main():
 
+    dtbeginn = datetime.now()
+
     log("SCRIPT", "INFO", "Skript gestartet")
     if testlauf:
         log("SCRIPT", "WARN", "Dies ist ein Testlauf")
@@ -46,11 +49,15 @@ async def main():
                 # Erster Login
                 # ──────────────────────────────────────────────
 
-                login(tab)
+                await login(tab)
+
+                # Prüfen, ob Kurse bereits gewählt wurden
+                if tab.locator("text=Du hast schon gewählt.").is_visible():
+                    log("SKRIPT", "WARN", "Kurse sind bereits gewählt")
+                    testlauf = True
+                    break
 
                 await tab.goto(url + "/coursebooking")
-                info_only = False
-
                 try:
                     await tab.wait_for_url("**/dashboard", timeout=1000)
                     log("BOOK", "WARN", "Nur Kursinformationen verfügbar")
@@ -59,6 +66,7 @@ async def main():
                     await tab.goto(url + "/courseinformations")
 
                 except:
+                    info_only = False
                     log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
                 # ──────────────────────────────────────────────
@@ -73,7 +81,7 @@ async def main():
                         except: await tab.reload()
 
                     log("SKRIPT", "INFO", f"Sessions wurden beendet")
-                    login(tab)
+                    await login(tab)
                     await tab.goto(url + "/coursebooking")
                     log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
@@ -107,6 +115,20 @@ async def main():
         # Ende
         # ──────────────────────────────────────────────
 
+        dtende = datetime.now()
+        tdiff = round((dtende - dtbeginn).total_seconds())
+
+        if not testlauf:
+            print(r" _  _                _  _      _                     ___  _  _  _      _                                 _    ")
+            print(r"| || | ___  _ _  ___| |(_) __ | |_   ___  _ _       / __|| |(_)(_) __ | |__ _ __ __  _  _  _ _   ___ __ | |_  ")
+            print(r"| __ |/ -_)| '_||_ /| || |/ _||   \ / -_)| ' \     | (_ || || || |/ _|| / / \ V  V /| || || ' \ (_-// _||   \ ")
+            print(r"|_||_|\___||_|  /__||_||_|\__||_||_|\___||_||_|     \___||_| \_._|\__||_\_\  \_/\_/  \_._||_||_|/__/\__||_||_|")
+            print("")
+            msg = f"Der Stahlsoldat hat deine Kurse innerhalb von {f"{tdiff} Sekunden" if tdiff < 100 else f'{tdiff // 60}:{tdiff % 60} Minuten'} gewählt"
+            print(" " * round((117 - len(msg)) / 2) + msg)
+            print("")
+
+
         log("SCRIPT", "SUCCESS", "Skript ordnungsgemäß ausgeführt")
         if settings["headless"]:
             await browser.close()
@@ -118,7 +140,7 @@ async def login(p: Page):
 
     await p.goto(url + "/login")
     try:
-        p.wait_for_url("**/dashboard", timeout=1000)
+        await p.wait_for_url("**/dashboard", timeout=1000)
         log("LOGIN", "SUCCESS", "Bereits angemeldet")
         return
     except:
