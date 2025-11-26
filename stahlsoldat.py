@@ -152,5 +152,34 @@ async def login(p: Page):
                 return
             attempt += 1
 
+async def get_toasts(p: Page):
+    toasters = await p.query_selector_all("#toaster")
+
+    messages = []
+
+    for t in toasters:
+        xdata = await t.get_attribute("x-data")
+        if not xdata:
+            continue
+
+        import re, json
+        m = re.search(r"JSON\.parse\('([^']*)'\)", xdata)
+        if not m:
+            continue
+
+        raw_json = m.group(1)
+
+        from html import unescape
+        raw_json = unescape(raw_json)
+
+        arr: dict = json.loads(raw_json)
+
+        for item in arr:
+            if "message" in item:
+                messages.append(item["message"])
+
+    return messages
+
+
 if __name__ == "__main__":
     asyncio.run(main())
