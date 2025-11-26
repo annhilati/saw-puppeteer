@@ -3,13 +3,6 @@ import os, dotenv
 from fancyconsole import log
 from playwright.async_api import async_playwright, Page
 
-# 0. Anmelden
-# 1. Warten auf Beginn (detektieren?)
-#   ab 30 Sekunden vor: alle 5 Sekunden reloaden, Login-Page detektieren -> weiter
-# 
-# 
-# 
-
 # ────────────────────────────────────────────────────────────────────────────────
 # Meta / Config
 # ────────────────────────────────────────────────────────────────────────────────
@@ -55,7 +48,6 @@ async def main():
 
                 login(tab)
 
-                # Seitenzustand testen
                 await tab.goto(url + "/coursebooking")
                 info_only = False
 
@@ -77,10 +69,8 @@ async def main():
                 if not testlauf and not info_only:
                     log("SKRIPT", "INFO", f"Warten, bis Sessions beendet werden (Refresh alle {s} Sekunden)")
                     while not tab.url.endswith("login"):
-                        try:
-                            await tab.wait_for_url("**/login", timeout=s*1000)
-                        except:
-                            await tab.reload()
+                        try:    await tab.wait_for_url("**/login", timeout=s*1000)
+                        except: await tab.reload()
 
                     log("SKRIPT", "INFO", f"Sessions wurden beendet")
                     login(tab)
@@ -105,8 +95,13 @@ async def main():
                 await tab.goto(f"{url}/coursebooking/book")
                 # Hier noch redirects überprüfen. Sowohl bei SUCCESS als auch nicht
                 log(f"BOOK", "INFO", f"Kurse verbindlich gebucht")
-            except:
-                continue # TODO: debug
+
+                break # Anti-Timeout-Loop beenden
+
+            except Exception as e:
+                log("SKRIPT", "FATAL", f"{type(e)}: {e}")
+                log("SKRIPT", "INFO", f"Der Prozess wird von Neuem begonnen")
+                continue # Anti-Timeout-Loop neustarten
 
         # ──────────────────────────────────────────────
         # Ende
