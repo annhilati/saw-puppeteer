@@ -21,9 +21,6 @@ kursIDs:  list[int] = [int(p) for p in os.getenv("KURSE").split(", ")]
 testlauf: bool      = os.getenv("TESTLAUF")
 
 settings = {
-    "autoLogin": True,
-    "selectCourses": True,
-    "autoBook": False,
     "headless": False
 }
 
@@ -50,61 +47,66 @@ async def main():
         tab = await ctx.new_page()
         log("BROWSER", "INFO", "Neuer Tab geöffnet")
 
+        while True:
+            try:
+                # ──────────────────────────────────────────────
+                # Erster Login
+                # ──────────────────────────────────────────────
 
-        # ──────────────────────────────────────────────
-        # Erster Login
-        # ──────────────────────────────────────────────
+                login(tab)
 
-        login(tab)
+                # Seitenzustand testen
+                await tab.goto(url + "/coursebooking")
+                info_only = False
 
-        # Seitenzustand testen
-        await tab.goto(url + "/coursebooking")
-        info_only = False
-
-        try:
-            await tab.wait_for_url("**/dashboard", timeout=1000)
-            log("BOOK", "WARN", "Nur Kursinformationen verfügbar")
-            
-            info_only = True
-            await tab.goto(url + "/courseinformations")
-
-        except:
-            log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
-
-        # ──────────────────────────────────────────────
-        # Abwarten
-        # ──────────────────────────────────────────────
-
-        s = 10
-        if not testlauf and not info_only:
-            log("SKRIPT", "INFO", f"Warten, bis Sessions beendet werden (Refresh alle {s} Sekunden)")
-            while not tab.url.endswith("login"):
                 try:
-                    await tab.wait_for_url("**/login", timeout=s*1000)
+                    await tab.wait_for_url("**/dashboard", timeout=1000)
+                    log("BOOK", "WARN", "Nur Kursinformationen verfügbar")
+                    
+                    info_only = True
+                    await tab.goto(url + "/courseinformations")
+
                 except:
-                    await tab.reload()
+                    log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
-            log("SKRIPT", "INFO", f"Sessions wurden beendet")
-            login(tab)
-            tab.goto(url + "/coursebooking")
-            log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
+                # ──────────────────────────────────────────────
+                # Abwarten
+                # ──────────────────────────────────────────────
 
-        # ──────────────────────────────────────────────
-        # Course Booking
-        # ──────────────────────────────────────────────
+                s = 10
+                if not testlauf and not info_only:
+                    log("SKRIPT", "INFO", f"Warten, bis Sessions beendet werden (Refresh alle {s} Sekunden)")
+                    while not tab.url.endswith("login"):
+                        try:
+                            await tab.wait_for_url("**/login", timeout=s*1000)
+                        except:
+                            await tab.reload()
 
-        await tab.evaluate(
-            """(kursIDs) => {
-                kursIDs.forEach(kursID => {
-                    Livewire.dispatch('addKurs', { kursID });
-                });
-            }""",
-            kursIDs
-        )
-        log("BOOK", "INFO", "Alle Kurse versucht hinzuzufügen (Feedback erwarteter Maßen unbekannt)")
+                    log("SKRIPT", "INFO", f"Sessions wurden beendet")
+                    login(tab)
+                    await tab.goto(url + "/coursebooking")
+                    log("BOOK", "SUCCESS", "Kursbuchungs-Seite geladen")
 
-        await tab.goto(f"{url}/coursebooking/book")
-        log(f"BOOK", "INFO", f"Seite geladen: {tab.url}")
+                # ──────────────────────────────────────────────
+                # Course Booking
+                # ──────────────────────────────────────────────
+
+                await tab.evaluate(
+                    """(kursIDs) => {
+                        kursIDs.forEach(kursID => {
+                            Livewire.dispatch('addKurs', { kursID });
+                        });
+                    }""",
+                    kursIDs
+                )
+                log("BOOK", "INFO", "Alle Kurse versucht hinzuzufügen (Feedback erwarteter Maßen unbekannt)")
+
+                log("BOOK", "INFO", "Beginne verbindliches Buchen")
+                await tab.goto(f"{url}/coursebooking/book")
+                # Hier noch redirects überprüfen. Sowohl bei SUCCESS als auch nicht
+                log(f"BOOK", "INFO", f"Kurse verbindlich gebucht")
+            except:
+                continue # TODO: debug
 
         # ──────────────────────────────────────────────
         # Ende
