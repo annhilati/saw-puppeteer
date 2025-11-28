@@ -12,7 +12,7 @@ dotenv.load_dotenv()
 username: str       = os.getenv("USER")
 password: str       = os.getenv("PASSWORD")
 kursIDs:  list[int] = [int(p) for p in os.getenv("KURSE").split(", ")]
-testlauf: bool      = os.getenv("TESTLAUF")
+testlauf: bool      = bool(os.getenv("TESTLAUF"))
 
 settings = {
     "headless": False
@@ -25,6 +25,7 @@ url = "https://sawware.benno.webstitut.de"
 # ────────────────────────────────────────────────────────────────────────────────
 
 async def main():
+    global testlauf
 
     dtbeginn = datetime.now()
 
@@ -35,7 +36,7 @@ async def main():
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch(
             headless=settings["headless"],
-            args=["--start-maximized"]
+            # args=["--start-maximized"]
         )
         log("BROWSER", "INFO", "Browser gestartet")
 
@@ -52,7 +53,7 @@ async def main():
                 await login(tab)
 
                 # Prüfen, ob Kurse bereits gewählt wurden
-                if tab.locator("text=Du hast schon gewählt.").is_visible():
+                if await tab.locator("text=Du hast schon gewählt.").is_visible():
                     log("SKRIPT", "WARN", "Kurse sind bereits gewählt")
                     testlauf = True
                     break
@@ -134,6 +135,7 @@ async def main():
             await browser.close()
         else:
             log("SCRIPT", "INFO", "Schließe das Browserfenster, um das Skript zu beenden")
+            browser.
 
 async def login(p: Page):
     log("SKRIPT", "INFO", "Loginsequenz begonnen")
